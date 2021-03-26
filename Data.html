@@ -26,8 +26,8 @@
               Category
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/Datal.html">Workforce size</a>
-              <a class="dropdown-item" href="/Datale.html">Country</a>              
+              <a class="dropdown-item" href="/Open-Data/Datal.html">Workforce size</a>
+              <a class="dropdown-item" href="/Open-Data/Datale.html">Country</a>              
             </div>
         </span> 
         <span><h3>Industry</h3></span>        
@@ -337,7 +337,7 @@
 
             function displaySurveysLess250() {
               d3.queue()
-                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                .defer(d3.tsv, "/Open-Data/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
                 function(data, id) {
                     return {
                         id: id,
