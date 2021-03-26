@@ -13,7 +13,7 @@
 
 
 :TPMay2020 rdf:type industry:TimePeriod;
-	 dc:title "May 2020" ;	 
+	 dc:title "May 2020".	 
 
 :MiningAndQuarrying rdf:type industry:Industry;
 	 dc:title "Mining And Quarrying".
@@ -64,107 +64,107 @@
 	 dc:title "All Industries".
 
 :SentOutSurveysWFLessThan250 rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Surveys Sent Out (Workforce Size < 250)" ;
+	 dc:title "Surveys Sent Out (Workforce Size < 250)".
 
 :SentOutSurveysWFMoreThan250 rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Surveys Sent Out (Workforce Size 250+)" ;
+	 dc:title "Surveys Sent Out (Workforce Size 250+)".
 
 :SentOutSurveysTotal rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Surveys Sent Out (Total)" ;
+	 dc:title "Surveys Sent Out (Total)".
 
 :RespondedSurveysWFLessThan250 rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Number of Responses (Workforce Size < 250)" ;
+	 dc:title "Number of Responses (Workforce Size < 250)".
 
 :RespondedSurveysWFMoreThan250 rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Number of Responses (Workforce Size 250+)" ;
+	 dc:title "Number of Responses (Workforce Size 250+)".
 
 :RespondedSurveysTotal rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Number of Responses (Total)" ;
+	 dc:title "Number of Responses (Total)".
 
 :RespondedProportionSurveysWFLessThan250 rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Proportion of Responses (Workforce Size < 250)" ;
+	 dc:title "Proportion of Responses (Workforce Size < 250)".
 
 :RespondedProportionSurveysWFMoreThan250 rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Proportion of Responses (Workforce Size 250+)" ;
+	 dc:title "Proportion of Responses (Workforce Size 250+)".
 
 :RespondedProportionSurveysTotal rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Proportion of Responses (Total)" ;
+	 dc:title "Proportion of Responses (Total)".
 
 
 :TradingStatusCont rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Trading status: Continuing to trade" ;
+	 dc:title "Trading status: Continuing to trade".
 
 :TradingStatusCeased rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Trading status: Has permanently ceased trading" ;
+	 dc:title "Trading status: Has permanently ceased trading".
 
 :TradingStatusPaused rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Trading status: Has temporarily closed or temporarily paused trading" ;
+	 dc:title "Trading status: Has temporarily closed or temporarily paused trading".
 
 :AppliedForCJRS rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Applied for: Coronavirus Job Retention Scheme" ;
+	 dc:title "Applied for: Coronavirus Job Retention Scheme".
 
 :AppliedForBRH rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Applied for: Business rates holiday" ;
+	 dc:title "Applied for: Business rates holiday".
 
 :AppliedForVAT rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Applied for: Deferring VAT payments" ;
+	 dc:title "Applied for: Deferring VAT payments".
 
 :AppliedForHMRC rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Applied for: HMRC Time To Pay scheme" ;
+	 dc:title "Applied for: HMRC Time To Pay scheme".
 
 :AppliedForGovFund rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Applied for: Government-funded small business grant or loan schemes" ;
+	 dc:title "Applied for: Government-funded small business grant or loan schemes".
 
 :AppliedForAFA rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Applied for: Accredited finance agreements" ;
+	 dc:title "Applied for: Accredited finance agreements".
 
 :AppliedForNone rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Applied for: We have not applied for any of these initiatives" ;
+	 dc:title "Applied for: We have not applied for any of these initiatives".
 
 
 
 :ReceivedCJRS  rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Received: Coronavirus Job Retention Scheme" ;
+	 dc:title "Received: Coronavirus Job Retention Scheme".
 
 :ReceivedBRH rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Received: Business rates holiday" ;
+	 dc:title "Received: Business rates holiday".
 
 :ReceivedVAT rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Received: Deferring VAT payments" ;
+	 dc:title "Received: Deferring VAT payments".
 
 :ReceivedHMRC rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Received: HMRC Time To Pay scheme" ;
+	 dc:title "Received: HMRC Time To Pay scheme". 
 
 :ReceivedGovFund rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Received: Government-funded small business grant or loan schemes" ;
+	 dc:title "Received: Government-funded small business grant or loan schemes".
 
 :ReceivedAFA rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Received: Accredited finance agreements" ;
+	 dc:title "Received: Accredited finance agreements".
 
 :ReceivedNone rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Received: We haven’t received any that we applied for" ;
+	 dc:title "Received: We haven’t received any that we applied for".
 
 :WillApplyForCJRS rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Will apply For: Coronavirus Job Retention Scheme" ;
+	 dc:title "Will apply For: Coronavirus Job Retention Scheme".
 
 :WillApplyForBRH rdf:type industry:IndustryDetailedInformation;
-	dc:title "Will apply for: Business rates holiday" ;
+	dc:title "Will apply for: Business rates holiday".
 
 :WillApplyForVAT rdf:type industry:IndustryDetailedInformation;
-	 dc:title "Will apply for: Deferring VAT payments" ; 	
+	 dc:title "Will apply for: Deferring VAT payments". 	
 
 
 :WillApplyForHMRC rdf:type industry:IndustryDetailedInformation; 
-	 dc:title "Will apply for: HMRC Time To Pay scheme" ;
+	 dc:title "Will apply for: HMRC Time To Pay scheme".
 
 :WillApplyForGovFund rdf:type industry:IndustryDetailedInformation; 
-	 dc:title "Will apply for: Government-funded small business grant or loan schemes" ;
+	 dc:title "Will apply for: Government-funded small business grant or loan schemes".
 
 :WillApplyForAFA rdf:type industry:IndustryDetailedInformation; 	
- dc:title "Will apply for:: Accredited finance agreements" ;
+ dc:title "Will apply for:: Accredited finance agreements".
 
 :WillApplyForNone rdf:type industry:IndustryDetailedInformation;
- 	 dc:title "Will apply for:  None of the above" ;
+ 	 dc:title "Will apply for:  None of the above".
 
 
 
@@ -714,7 +714,7 @@
 	 qb:dataSet :ds1_16_30;
 	 qb:dataSet :ds1_16_31;
 	 qb:dataSet :ds1_16_32;
-	 qb:dataSet :ds1_16_33;
+	 qb:dataSet :ds1_16_33
 
 	 . 
 
