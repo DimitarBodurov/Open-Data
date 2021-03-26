@@ -5,8 +5,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix scovo: <http://purl.org/NET/scovo#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix : <http://country.psi.enakting.org/data/> .
-@prefix country: <http://enakting.org/schema/country> .
+@prefix : <http://country.semanticweb.org/data/> .
+@prefix country: <http://semanticweb.org/schema/country> .
 
 
 
