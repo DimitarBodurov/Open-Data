@@ -6,7 +6,7 @@
 @prefix scovo: <http://purl.org/NET/scovo#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix : <http://workforce.semanticweb.org/data/> .
-@prefix workforce: <http://semanticweb.org/schema/workforce> .
+@prefix workforce: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#> .
 
 :TPMay2020 rdf:type workforce:TimePeriod;
 	 dc:title "May 2020" ;	 
