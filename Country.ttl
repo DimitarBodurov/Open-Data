@@ -1,17 +1,17 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix scovo: <http://purl.org/NET/scovo#> .
-@prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix : <http://country.semanticweb.org/data/> .
-@prefix country: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix scovo: <http://purl.org/NET/scovo#>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix : <http://country.semanticweb.org/data/>.
+@prefix country: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#>.
 
 
 
 :TPMay2020 rdf:type country:TimePeriod;
-	 dc:title "May 2020" ;	 
+	 dc:title "May 2020".	 
 
 :England rdf:type country:Country;
 	 dc:title "England".
@@ -30,34 +30,34 @@
 
 
 :TradingStatusCont rdf:type country:CountryDetailedInformation;
-	 dc:title "Trading status: Continuing to trade" ;
+	 dc:title "Trading status: Continuing to trade".
 
 :TradingStatusCeased rdf:type country:CountryDetailedInformation;
-	 dc:title "Trading status: Has permanently ceased trading" ;
+	 dc:title "Trading status: Has permanently ceased trading".
 
 :TradingStatusPaused rdf:type country:CountryDetailedInformation;
-	 dc:title "Trading status: Has temporarily closed or temporarily paused trading" ;
+	 dc:title "Trading status: Has temporarily closed or temporarily paused trading".
 
 :AppliedForCJRS rdf:type country:CountryDetailedInformation;
-	 dc:title "Applied for: Coronavirus Job Retention Scheme" ;
+	 dc:title "Applied for: Coronavirus Job Retention Scheme".
 
 :AppliedForBRH rdf:type country:CountryDetailedInformation;
-	 dc:title "Applied for: Business rates holiday" ;
+	 dc:title "Applied for: Business rates holiday".
 
 :AppliedForVAT rdf:type country:CountryDetailedInformation;
-	 dc:title "Applied for: Deferring VAT payments" ;
+	 dc:title "Applied for: Deferring VAT payments".
 
 :AppliedForHMRC rdf:type country:CountryDetailedInformation;
-	 dc:title "Applied for: HMRC Time To Pay scheme" ;
+	 dc:title "Applied for: HMRC Time To Pay scheme".
 
 :AppliedForGovFund rdf:type country:CountryDetailedInformation;
-	 dc:title "Applied for: Government-funded small business grant or loan schemes" ;
+	 dc:title "Applied for: Government-funded small business grant or loan schemes".
 
 :AppliedForAFA rdf:type country:CountryDetailedInformation;
-	 dc:title "Applied for: Accredited finance agreements" ;
+	 dc:title "Applied for: Accredited finance agreements".
 
 :AppliedForNone rdf:type country:CountryDetailedInformation;
-	 dc:title "Applied for: We have not applied for any of these initiatives" ;
+	 dc:title "Applied for: We have not applied for any of these initiatives".
 
 
 #Dataset
@@ -112,7 +112,7 @@
 	 qb:dataSet :ds3_5_7;
 	 qb:dataSet :ds3_5_8;	
 	 qb:dataSet :ds3_5_9;
-	 qb:dataSet :ds3_5_10;
+	 qb:dataSet :ds3_5_10
 	 
 
 
