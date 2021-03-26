@@ -1,0 +1,6 @@
+Country	Trading status: Continuing to trade	Trading status: Has permanently ceased trading	Trading status: Has temporarily closed or temporarily paused trading	Applied for: Coronavirus Job Retention Scheme	Applied for: Business rates holiday	Applied for: Deferring VAT payments	Applied for: HMRC Time To Pay scheme	Applied for: Government-funded small business grant or loan schemes	Applied for: Accredited finance agreements	Applied for: We have not applied for any of these initiatives
+England	0.778	0.004	0.218	0.673	0.274	0.573	0.224	0.109	0.097	0.205
+Wales	0.762	0.011	0.227	0.738	0.387	0.651	0.255	0.137	0.127	0.134
+Scotland	0.776	0.007	0.217	0.717	0.29	0.63	0.235	0.075	0.098	0.165
+Northern Ireland	0.728	0	0.272	0.652	0.304	0.402	0.13	0.109	0.065	0.239
+UK	0.767	0.005	0.228	0.672	0.274	0.564	0.223	0.112	0.099	0.207
