@@ -6,7 +6,7 @@
 @prefix scovo: <http://purl.org/NET/scovo#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix : <http://industry.semanticweb.org/data/> .
-@prefix industry: <http://semanticweb.org/schema/industry> .
+@prefix industry: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#> .
 
 
 
