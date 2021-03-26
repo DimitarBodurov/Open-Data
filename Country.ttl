@@ -1,0 +1,484 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix : <http://country.psi.enakting.org/data/> .
+@prefix country: <http://enakting.org/schema/country> .
+
+
+
+:TPMay2020 rdf:type country:TimePeriod;
+	 dc:title "May 2020" ;	 
+
+:England rdf:type country:Country;
+	 dc:title "England".
+
+:Wales rdf:type country:Country;
+	 dc:title "Wales".
+
+:Scotland rdf:type country:Country;
+	 dc:title "Scotland".
+
+:NorthernIreland rdf:type country:Country;
+	 dc:title "Northern Ireland".
+
+:UK rdf:type country:Country;
+	 dc:title "UK".
+
+
+:TradingStatusCont rdf:type country:CountryDetailedInformation;
+	 dc:title "Trading status: Continuing to trade" ;
+
+:TradingStatusCeased rdf:type country:CountryDetailedInformation;
+	 dc:title "Trading status: Has permanently ceased trading" ;
+
+:TradingStatusPaused rdf:type country:CountryDetailedInformation;
+	 dc:title "Trading status: Has temporarily closed or temporarily paused trading" ;
+
+:AppliedForCJRS rdf:type country:CountryDetailedInformation;
+	 dc:title "Applied for: Coronavirus Job Retention Scheme" ;
+
+:AppliedForBRH rdf:type country:CountryDetailedInformation;
+	 dc:title "Applied for: Business rates holiday" ;
+
+:AppliedForVAT rdf:type country:CountryDetailedInformation;
+	 dc:title "Applied for: Deferring VAT payments" ;
+
+:AppliedForHMRC rdf:type country:CountryDetailedInformation;
+	 dc:title "Applied for: HMRC Time To Pay scheme" ;
+
+:AppliedForGovFund rdf:type country:CountryDetailedInformation;
+	 dc:title "Applied for: Government-funded small business grant or loan schemes" ;
+
+:AppliedForAFA rdf:type country:CountryDetailedInformation;
+	 dc:title "Applied for: Accredited finance agreements" ;
+
+:AppliedForNone rdf:type country:CountryDetailedInformation;
+	 dc:title "Applied for: We have not applied for any of these initiatives" ;
+
+
+#Dataset
+:ds3 rdf:type qb:DataSet;
+	 dc:title "Business Impact of Covid 19 broken down by country, 7th May 2020";
+	 qb:dataSet :ds3_1_1;
+	 qb:dataSet :ds3_1_2;
+	 qb:dataSet :ds3_1_3;
+	 qb:dataSet :ds3_1_4;
+	 qb:dataSet :ds3_1_5;
+	 qb:dataSet :ds3_1_6;
+	 qb:dataSet :ds3_1_7;
+	 qb:dataSet :ds3_1_8;
+	 qb:dataSet :ds3_1_9;
+	 qb:dataSet :ds3_1_10;
+	 qb:dataSet :ds3_2_1;
+	 qb:dataSet :ds3_2_2;
+	 qb:dataSet :ds3_2_3;
+	 qb:dataSet :ds3_2_4;
+	 qb:dataSet :ds3_2_5;
+	 qb:dataSet :ds3_2_6;
+	 qb:dataSet :ds3_2_7;
+	 qb:dataSet :ds3_2_8;
+	 qb:dataSet :ds3_2_9;
+	 qb:dataSet :ds3_2_10;
+	 qb:dataSet :ds3_3_1;
+	 qb:dataSet :ds3_3_2;
+	 qb:dataSet :ds3_3_3;
+	 qb:dataSet :ds3_3_4;	 
+ 	 qb:dataSet :ds3_3_5;
+	 qb:dataSet :ds3_3_6;
+	 qb:dataSet :ds3_3_7;
+	 qb:dataSet :ds3_3_8;
+	 qb:dataSet :ds3_3_9;
+	 qb:dataSet :ds3_3_10;
+	 qb:dataSet :ds3_4_1;
+	 qb:dataSet :ds3_4_2;
+	 qb:dataSet :ds3_4_3;
+	 qb:dataSet :ds3_4_4;
+	 qb:dataSet :ds3_4_5;
+	 qb:dataSet :ds3_4_6;
+	 qb:dataSet :ds3_4_7;
+	 qb:dataSet :ds3_4_8;
+	 qb:dataSet :ds3_4_9;
+	 qb:dataSet :ds3_4_10;
+	 qb:dataSet :ds3_5_1;
+	 qb:dataSet :ds3_5_2;
+	 qb:dataSet :ds3_5_3;
+	 qb:dataSet :ds3_5_4;
+	 qb:dataSet :ds3_5_5;
+	 qb:dataSet :ds3_5_6;
+	 qb:dataSet :ds3_5_7;
+	 qb:dataSet :ds3_5_8;	
+	 qb:dataSet :ds3_5_9;
+	 qb:dataSet :ds3_5_10;
+	 
+
+
+:ds3_1_1 rdf:type qb:Observation; 
+	 rdf:value 0.778; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_2 rdf:type qb:Observation; 
+	 rdf:value 0.004; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_3 rdf:type qb:Observation; 
+	 rdf:value 0.218; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_4 rdf:type qb:Observation; 
+	 rdf:value 0.673; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_5 rdf:type qb:Observation; 
+	 rdf:value 0.274; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_6 rdf:type qb:Observation; 
+	 rdf:value 0.573; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_7 rdf:type qb:Observation; 
+	 rdf:value 0.224; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_8 rdf:type qb:Observation; 
+	 rdf:value 0.109; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_9 rdf:type qb:Observation; 
+	 rdf:value 0.097; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_1_10 rdf:type qb:Observation; 
+	 rdf:value 0.205; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :England; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_1 rdf:type qb:Observation; 
+	 rdf:value 0.762; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_2 rdf:type qb:Observation; 
+	 rdf:value 0.011; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_3 rdf:type qb:Observation; 
+	 rdf:value 0.227; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_4 rdf:type qb:Observation; 
+	 rdf:value 0.738; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_5 rdf:type qb:Observation; 
+	 rdf:value 0.387; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_6 rdf:type qb:Observation; 
+	 rdf:value 0.651; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_7 rdf:type qb:Observation; 
+	 rdf:value 0.255; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_8 rdf:type qb:Observation; 
+	 rdf:value 0.137; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_9 rdf:type qb:Observation; 
+	 rdf:value 0.127; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_2_10 rdf:type qb:Observation; 
+	 rdf:value 0.134; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Wales; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+
+:ds3_3_1 rdf:type qb:Observation; 
+	 rdf:value 0.776; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_2 rdf:type qb:Observation; 
+	 rdf:value 0.007; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_3 rdf:type qb:Observation; 
+	 rdf:value 0.217; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_4 rdf:type qb:Observation; 
+	 rdf:value 0.717; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_5 rdf:type qb:Observation; 
+	 rdf:value 0.29; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_6 rdf:type qb:Observation; 
+	 rdf:value 0.63; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_7 rdf:type qb:Observation; 
+	 rdf:value 0.235; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_8 rdf:type qb:Observation; 
+	 rdf:value 0.075; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_9 rdf:type qb:Observation; 
+	 rdf:value 0.098; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_3_10 rdf:type qb:Observation; 
+	 rdf:value 0.165; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :Scotland; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+
+:ds3_4_1 rdf:type qb:Observation; 
+	 rdf:value 0.728; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_2 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_3 rdf:type qb:Observation; 
+	 rdf:value 0.272; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_4 rdf:type qb:Observation; 
+	 rdf:value 0.652; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_5 rdf:type qb:Observation; 
+	 rdf:value 0.304; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_6 rdf:type qb:Observation; 
+	 rdf:value 0.402; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_7 rdf:type qb:Observation; 
+	 rdf:value 0.13; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_8 rdf:type qb:Observation; 
+	 rdf:value 0.109; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_9 rdf:type qb:Observation; 
+	 rdf:value 0.065; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_4_10 rdf:type qb:Observation; 
+	 rdf:value 0.239; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :NorthernIreland; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+
+:ds3_5_1 rdf:type qb:Observation; 
+	 rdf:value 0.767; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_2 rdf:type qb:Observation; 
+	 rdf:value 0.005; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_3 rdf:type qb:Observation; 
+	 rdf:value 0.228; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_4 rdf:type qb:Observation; 
+	 rdf:value 0.672; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_5 rdf:type qb:Observation; 
+	 rdf:value 0.274; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_6 rdf:type qb:Observation; 
+	 rdf:value 0.564; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_7 rdf:type qb:Observation; 
+	 rdf:value 0.223; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_8 rdf:type qb:Observation; 
+	 rdf:value 0.112; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_9 rdf:type qb:Observation; 
+	 rdf:value 0.099; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds3_5_10 rdf:type qb:Observation; 
+	 rdf:value 0.207; 
+	 qb:DataSet :ds3; 
+	 qb:DimensionProperty :UK; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

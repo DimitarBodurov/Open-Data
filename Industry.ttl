@@ -1,0 +1,4433 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix : <http://industry.psi.enakting.org/data/> .
+@prefix industry: <http://enakting.org/schema/industry> .
+
+
+
+
+
+:TPMay2020 rdf:type industry:TimePeriod;
+	 dc:title "May 2020" ;	 
+
+:MiningAndQuarrying rdf:type industry:Industry;
+	 dc:title "Mining And Quarrying".
+
+:Manufacturing rdf:type industry:Industry;
+	 dc:title "Manufacturing".
+
+:WaterSupplySewerageWasteManagementAndRemediationActivities rdf:type industry:Industry;
+	 dc:title "Water Supply, Sewerage, Waste Management And Remediation Activities".
+
+:Construction rdf:type industry:Industry;
+	 dc:title "Construction".
+
+:WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles rdf:type industry:Industry;
+	 dc:title "Wholesale And Retail Trade; Repair Of Motor Vehicles And Motorcycles".
+
+:AccommodationAndFoodServiceActivities rdf:type industry:Industry;
+	 dc:title "Accommodation And Food Service Activities".
+
+:TransportationAndStorage rdf:type industry:Industry;
+	 dc:title "Transportation And Storage".
+
+:InformationAndCommunication rdf:type industry:Industry;
+	 dc:title "InformationAndCommunication".
+
+:RealEstateActivities rdf:type industry:Industry;
+	 dc:title "Real Estate Activities".
+
+:ProfessionalScientificAndTechnicalActivities rdf:type industry:Industry;
+	 dc:title "Professional, Scientific And Technical Activities".
+
+:AdministrativeAndSupportServiceActivities rdf:type industry:Industry;
+	 dc:title "Administrative And Support Service Activities".
+
+:Education rdf:type industry:Industry;
+	 dc:title "Education".
+	
+:HumanHealthAndSocialWorkActivities rdf:type industry:Industry;
+	 dc:title "Human Health And Social Work Activities".
+
+:ArtsEntertainmentAndRecreation rdf:type industry:Industry;
+	 dc:title "Arts, Entertainment And Recreation".
+
+:OtherServiceActivities rdf:type industry:Industry;
+	 dc:title "Other Service Activities".
+
+:AllIndustries rdf:type industry:Industry;
+	 dc:title "All Industries".
+
+:SentOutSurveysWFLessThan250 rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Surveys Sent Out (Workforce Size < 250)" ;
+
+:SentOutSurveysWFMoreThan250 rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Surveys Sent Out (Workforce Size 250+)" ;
+
+:SentOutSurveysTotal rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Surveys Sent Out (Total)" ;
+
+:RespondedSurveysWFLessThan250 rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Number of Responses (Workforce Size < 250)" ;
+
+:RespondedSurveysWFMoreThan250 rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Number of Responses (Workforce Size 250+)" ;
+
+:RespondedSurveysTotal rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Number of Responses (Total)" ;
+
+:RespondedProportionSurveysWFLessThan250 rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Proportion of Responses (Workforce Size < 250)" ;
+
+:RespondedProportionSurveysWFMoreThan250 rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Proportion of Responses (Workforce Size 250+)" ;
+
+:RespondedProportionSurveysTotal rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Proportion of Responses (Total)" ;
+
+
+:TradingStatusCont rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Trading status: Continuing to trade" ;
+
+:TradingStatusCeased rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Trading status: Has permanently ceased trading" ;
+
+:TradingStatusPaused rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Trading status: Has temporarily closed or temporarily paused trading" ;
+
+:AppliedForCJRS rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Applied for: Coronavirus Job Retention Scheme" ;
+
+:AppliedForBRH rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Applied for: Business rates holiday" ;
+
+:AppliedForVAT rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Applied for: Deferring VAT payments" ;
+
+:AppliedForHMRC rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Applied for: HMRC Time To Pay scheme" ;
+
+:AppliedForGovFund rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Applied for: Government-funded small business grant or loan schemes" ;
+
+:AppliedForAFA rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Applied for: Accredited finance agreements" ;
+
+:AppliedForNone rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Applied for: We have not applied for any of these initiatives" ;
+
+
+
+:ReceivedCJRS  rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Received: Coronavirus Job Retention Scheme" ;
+
+:ReceivedBRH rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Received: Business rates holiday" ;
+
+:ReceivedVAT rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Received: Deferring VAT payments" ;
+
+:ReceivedHMRC rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Received: HMRC Time To Pay scheme" ;
+
+:ReceivedGovFund rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Received: Government-funded small business grant or loan schemes" ;
+
+:ReceivedAFA rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Received: Accredited finance agreements" ;
+
+:ReceivedNone rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Received: We haven’t received any that we applied for" ;
+
+:WillApplyForCJRS rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Will apply For: Coronavirus Job Retention Scheme" ;
+
+:WillApplyForBRH rdf:type industry:IndustryDetailedInformation;
+	dc:title "Will apply for: Business rates holiday" ;
+
+:WillApplyForVAT rdf:type industry:IndustryDetailedInformation;
+	 dc:title "Will apply for: Deferring VAT payments" ; 	
+
+
+:WillApplyForHMRC rdf:type industry:IndustryDetailedInformation; 
+	 dc:title "Will apply for: HMRC Time To Pay scheme" ;
+
+:WillApplyForGovFund rdf:type industry:IndustryDetailedInformation; 
+	 dc:title "Will apply for: Government-funded small business grant or loan schemes" ;
+
+:WillApplyForAFA rdf:type industry:IndustryDetailedInformation; 	
+ dc:title "Will apply for:: Accredited finance agreements" ;
+
+:WillApplyForNone rdf:type industry:IndustryDetailedInformation;
+ 	 dc:title "Will apply for:  None of the above" ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Dataset
+:ds1 rdf:type qb:DataSet;
+	 dc:title "Business Impact of Covid 19 broken down by industry, 7th May 2020";
+	 qb:dataSet :ds1_1_1;
+	 qb:dataSet :ds1_1_2;
+	 qb:dataSet :ds1_1_3;
+	 qb:dataSet :ds1_1_4;
+	 qb:dataSet :ds1_1_5;
+	 qb:dataSet :ds1_1_6;
+	 qb:dataSet :ds1_1_7;
+	 qb:dataSet :ds1_1_8;
+	 qb:dataSet :ds1_1_9;
+	 qb:dataSet :ds1_1_10;
+	 qb:dataSet :ds1_1_11;
+	 qb:dataSet :ds1_1_12;
+	 qb:dataSet :ds1_1_13;
+	 qb:dataSet :ds1_1_14;
+	 qb:dataSet :ds1_1_15;
+	 qb:dataSet :ds1_1_16;
+	 qb:dataSet :ds1_1_17;
+	 qb:dataSet :ds1_1_18;
+	 qb:dataSet :ds1_1_19;
+	 qb:dataSet :ds1_1_20;
+	 qb:dataSet :ds1_1_21;
+	 qb:dataSet :ds1_1_22;
+	 qb:dataSet :ds1_1_23;
+	 qb:dataSet :ds1_1_24;
+	 qb:dataSet :ds1_1_25;
+	 qb:dataSet :ds1_1_26;
+	 qb:dataSet :ds1_1_27;
+	 qb:dataSet :ds1_1_28;
+	 qb:dataSet :ds1_1_29;
+	 qb:dataSet :ds1_1_30;
+	 qb:dataSet :ds1_1_31;
+	 qb:dataSet :ds1_1_32;
+	 qb:dataSet :ds1_1_33;
+ 	 qb:dataSet :ds1_2_1;
+	 qb:dataSet :ds1_2_2;
+	 qb:dataSet :ds1_2_3;
+	 qb:dataSet :ds1_2_4;
+	 qb:dataSet :ds1_2_5;
+	 qb:dataSet :ds1_2_6;
+	 qb:dataSet :ds1_2_7;
+	 qb:dataSet :ds1_2_8;
+	 qb:dataSet :ds1_2_9;
+	 qb:dataSet :ds1_2_10;
+	 qb:dataSet :ds1_2_11;
+	 qb:dataSet :ds1_2_12;
+	 qb:dataSet :ds1_2_13;
+	 qb:dataSet :ds1_2_14;
+	 qb:dataSet :ds1_2_15;
+	 qb:dataSet :ds1_2_16;
+	 qb:dataSet :ds1_2_17;
+	 qb:dataSet :ds1_2_18;
+	 qb:dataSet :ds1_2_19;
+	 qb:dataSet :ds1_2_20;
+	 qb:dataSet :ds1_2_21;
+	 qb:dataSet :ds1_2_22;
+	 qb:dataSet :ds1_2_23;
+	 qb:dataSet :ds1_2_24;
+	 qb:dataSet :ds1_2_25;
+	 qb:dataSet :ds1_2_26;
+	 qb:dataSet :ds1_2_27;
+	 qb:dataSet :ds1_2_28;
+	 qb:dataSet :ds1_2_29;
+	 qb:dataSet :ds1_2_30;
+	 qb:dataSet :ds1_2_31;
+	 qb:dataSet :ds1_2_32;
+	 qb:dataSet :ds1_2_33;
+	 qb:dataSet :ds1_3_1;
+	 qb:dataSet :ds1_3_2;
+	 qb:dataSet :ds1_3_3;
+	 qb:dataSet :ds1_3_4;
+	 qb:dataSet :ds1_3_5;
+	 qb:dataSet :ds1_3_6;
+	 qb:dataSet :ds1_3_7;
+	 qb:dataSet :ds1_3_8;
+	 qb:dataSet :ds1_3_9;
+	 qb:dataSet :ds1_3_10;
+	 qb:dataSet :ds1_3_11;
+	 qb:dataSet :ds1_3_12;
+	 qb:dataSet :ds1_3_13;
+	 qb:dataSet :ds1_3_14;
+	 qb:dataSet :ds1_3_15;
+	 qb:dataSet :ds1_3_16;
+	 qb:dataSet :ds1_3_17;
+	 qb:dataSet :ds1_3_18;
+	 qb:dataSet :ds1_3_19;
+	 qb:dataSet :ds1_3_20;
+	 qb:dataSet :ds1_3_21;
+	 qb:dataSet :ds1_3_22;
+	 qb:dataSet :ds1_3_23;
+	 qb:dataSet :ds1_3_24;
+	 qb:dataSet :ds1_3_25;
+	 qb:dataSet :ds1_3_26;
+	 qb:dataSet :ds1_3_27;
+	 qb:dataSet :ds1_3_28;
+	 qb:dataSet :ds1_3_29;
+	 qb:dataSet :ds1_3_30;
+	 qb:dataSet :ds1_3_31;
+	 qb:dataSet :ds1_3_32;
+	 qb:dataSet :ds1_3_33;
+ qb:dataSet :ds1_4_1;
+	 qb:dataSet :ds1_4_2;
+	 qb:dataSet :ds1_4_3;
+	 qb:dataSet :ds1_4_4;
+	 qb:dataSet :ds1_4_5;
+	 qb:dataSet :ds1_4_6;
+	 qb:dataSet :ds1_4_7;
+	 qb:dataSet :ds1_4_8;
+	 qb:dataSet :ds1_4_9;
+	 qb:dataSet :ds1_4_10;
+	 qb:dataSet :ds1_4_11;
+	 qb:dataSet :ds1_4_12;
+	 qb:dataSet :ds1_4_13;
+	 qb:dataSet :ds1_4_14;
+	 qb:dataSet :ds1_4_15;
+	 qb:dataSet :ds1_4_16;
+	 qb:dataSet :ds1_4_17;
+	 qb:dataSet :ds1_4_18;
+	 qb:dataSet :ds1_4_19;
+	 qb:dataSet :ds1_4_20;
+	 qb:dataSet :ds1_4_21;
+	 qb:dataSet :ds1_4_22;
+	 qb:dataSet :ds1_4_23;
+	 qb:dataSet :ds1_4_24;
+	 qb:dataSet :ds1_4_25;
+	 qb:dataSet :ds1_4_26;
+	 qb:dataSet :ds1_4_27;
+	 qb:dataSet :ds1_4_28;
+	 qb:dataSet :ds1_4_29;
+	 qb:dataSet :ds1_4_30;
+	 qb:dataSet :ds1_4_31;
+	 qb:dataSet :ds1_4_32;
+	 qb:dataSet :ds1_4_33;
+ qb:dataSet :ds1_5_1;
+	 qb:dataSet :ds1_5_2;
+	 qb:dataSet :ds1_5_3;
+	 qb:dataSet :ds1_5_4;
+	 qb:dataSet :ds1_5_5;
+	 qb:dataSet :ds1_5_6;
+	 qb:dataSet :ds1_5_7;
+	 qb:dataSet :ds1_5_8;
+	 qb:dataSet :ds1_5_9;
+	 qb:dataSet :ds1_5_10;
+	 qb:dataSet :ds1_5_11;
+	 qb:dataSet :ds1_5_12;
+	 qb:dataSet :ds1_5_13;
+	 qb:dataSet :ds1_5_14;
+	 qb:dataSet :ds1_5_15;
+	 qb:dataSet :ds1_5_16;
+	 qb:dataSet :ds1_5_17;
+	 qb:dataSet :ds1_5_18;
+	 qb:dataSet :ds1_5_19;
+	 qb:dataSet :ds1_5_20;
+	 qb:dataSet :ds1_5_21;
+	 qb:dataSet :ds1_5_22;
+	 qb:dataSet :ds1_5_23;
+	 qb:dataSet :ds1_5_24;
+	 qb:dataSet :ds1_5_25;
+	 qb:dataSet :ds1_5_26;
+	 qb:dataSet :ds1_5_27;
+	 qb:dataSet :ds1_5_28;
+	 qb:dataSet :ds1_5_29;
+	 qb:dataSet :ds1_5_30;
+	 qb:dataSet :ds1_5_31;
+	 qb:dataSet :ds1_5_32;
+	 qb:dataSet :ds1_5_33;
+ qb:dataSet :ds1_6_1;
+	 qb:dataSet :ds1_6_2;
+	 qb:dataSet :ds1_6_3;
+	 qb:dataSet :ds1_6_4;
+	 qb:dataSet :ds1_6_5;
+	 qb:dataSet :ds1_6_6;
+	 qb:dataSet :ds1_6_7;
+	 qb:dataSet :ds1_6_8;
+	 qb:dataSet :ds1_6_9;
+	 qb:dataSet :ds1_6_10;
+	 qb:dataSet :ds1_6_11;
+	 qb:dataSet :ds1_6_12;
+	 qb:dataSet :ds1_6_13;
+	 qb:dataSet :ds1_6_14;
+	 qb:dataSet :ds1_6_15;
+	 qb:dataSet :ds1_6_16;
+	 qb:dataSet :ds1_6_17;
+	 qb:dataSet :ds1_6_18;
+	 qb:dataSet :ds1_6_19;
+	 qb:dataSet :ds1_6_20;
+	 qb:dataSet :ds1_6_21;
+	 qb:dataSet :ds1_6_22;
+	 qb:dataSet :ds1_6_23;
+	 qb:dataSet :ds1_6_24;
+	 qb:dataSet :ds1_6_25;
+	 qb:dataSet :ds1_6_26;
+	 qb:dataSet :ds1_6_27;
+	 qb:dataSet :ds1_6_28;
+	 qb:dataSet :ds1_6_29;
+	 qb:dataSet :ds1_6_30;
+	 qb:dataSet :ds1_6_31;
+	 qb:dataSet :ds1_6_32;
+	 qb:dataSet :ds1_6_33;
+ qb:dataSet :ds1_7_1;
+	 qb:dataSet :ds1_7_2;
+	 qb:dataSet :ds1_7_3;
+	 qb:dataSet :ds1_7_4;
+	 qb:dataSet :ds1_7_5;
+	 qb:dataSet :ds1_7_6;
+	 qb:dataSet :ds1_7_7;
+	 qb:dataSet :ds1_7_8;
+	 qb:dataSet :ds1_7_9;
+	 qb:dataSet :ds1_7_10;
+	 qb:dataSet :ds1_7_11;
+	 qb:dataSet :ds1_7_12;
+	 qb:dataSet :ds1_7_13;
+	 qb:dataSet :ds1_7_14;
+	 qb:dataSet :ds1_7_15;
+	 qb:dataSet :ds1_7_16;
+	 qb:dataSet :ds1_7_17;
+	 qb:dataSet :ds1_7_18;
+	 qb:dataSet :ds1_7_19;
+	 qb:dataSet :ds1_7_20;
+	 qb:dataSet :ds1_7_21;
+	 qb:dataSet :ds1_7_22;
+	 qb:dataSet :ds1_7_23;
+	 qb:dataSet :ds1_7_24;
+	 qb:dataSet :ds1_7_25;
+	 qb:dataSet :ds1_7_26;
+	 qb:dataSet :ds1_7_27;
+	 qb:dataSet :ds1_7_28;
+	 qb:dataSet :ds1_7_29;
+	 qb:dataSet :ds1_7_30;
+	 qb:dataSet :ds1_7_31;
+	 qb:dataSet :ds1_7_32;
+	 qb:dataSet :ds1_7_33;
+ qb:dataSet :ds1_8_1;
+	 qb:dataSet :ds1_8_2;
+	 qb:dataSet :ds1_8_3;
+	 qb:dataSet :ds1_8_4;
+	 qb:dataSet :ds1_8_5;
+	 qb:dataSet :ds1_8_6;
+	 qb:dataSet :ds1_8_7;
+	 qb:dataSet :ds1_8_8;
+	 qb:dataSet :ds1_8_9;
+	 qb:dataSet :ds1_8_10;
+	 qb:dataSet :ds1_8_11;
+	 qb:dataSet :ds1_8_12;
+	 qb:dataSet :ds1_8_13;
+	 qb:dataSet :ds1_8_14;
+	 qb:dataSet :ds1_8_15;
+	 qb:dataSet :ds1_8_16;
+	 qb:dataSet :ds1_8_17;
+	 qb:dataSet :ds1_8_18;
+	 qb:dataSet :ds1_8_19;
+	 qb:dataSet :ds1_8_20;
+	 qb:dataSet :ds1_8_21;
+	 qb:dataSet :ds1_8_22;
+	 qb:dataSet :ds1_8_23;
+	 qb:dataSet :ds1_8_24;
+	 qb:dataSet :ds1_8_25;
+	 qb:dataSet :ds1_8_26;
+	 qb:dataSet :ds1_8_27;
+	 qb:dataSet :ds1_8_28;
+	 qb:dataSet :ds1_8_29;
+	 qb:dataSet :ds1_8_30;
+	 qb:dataSet :ds1_8_31;
+	 qb:dataSet :ds1_8_32;
+	 qb:dataSet :ds1_8_33;
+ qb:dataSet :ds1_9_1;
+	 qb:dataSet :ds1_9_2;
+	 qb:dataSet :ds1_9_3;
+	 qb:dataSet :ds1_9_4;
+	 qb:dataSet :ds1_9_5;
+	 qb:dataSet :ds1_9_6;
+	 qb:dataSet :ds1_9_7;
+	 qb:dataSet :ds1_9_8;
+	 qb:dataSet :ds1_9_9;
+	 qb:dataSet :ds1_9_10;
+	 qb:dataSet :ds1_9_11;
+	 qb:dataSet :ds1_9_12;
+	 qb:dataSet :ds1_9_13;
+	 qb:dataSet :ds1_9_14;
+	 qb:dataSet :ds1_9_15;
+	 qb:dataSet :ds1_9_16;
+	 qb:dataSet :ds1_9_17;
+	 qb:dataSet :ds1_9_18;
+	 qb:dataSet :ds1_9_19;
+	 qb:dataSet :ds1_9_20;
+	 qb:dataSet :ds1_9_21;
+	 qb:dataSet :ds1_9_22;
+	 qb:dataSet :ds1_9_23;
+	 qb:dataSet :ds1_9_24;
+	 qb:dataSet :ds1_9_25;
+	 qb:dataSet :ds1_9_26;
+	 qb:dataSet :ds1_9_27;
+	 qb:dataSet :ds1_9_28;
+	 qb:dataSet :ds1_9_29;
+	 qb:dataSet :ds1_9_30;
+	 qb:dataSet :ds1_9_31;
+	 qb:dataSet :ds1_9_32;
+	 qb:dataSet :ds1_9_33;
+ 	 qb:dataSet :ds1_10_1;
+	 qb:dataSet :ds1_10_2;
+	 qb:dataSet :ds1_10_3;
+	 qb:dataSet :ds1_10_4;
+	 qb:dataSet :ds1_10_5;
+	 qb:dataSet :ds1_10_6;
+	 qb:dataSet :ds1_10_7;
+	 qb:dataSet :ds1_10_8;
+	 qb:dataSet :ds1_10_9;
+	 qb:dataSet :ds1_10_10;
+	 qb:dataSet :ds1_10_11;
+	 qb:dataSet :ds1_10_12;
+	 qb:dataSet :ds1_10_13;
+	 qb:dataSet :ds1_10_14;
+	 qb:dataSet :ds1_10_15;
+	 qb:dataSet :ds1_10_16;
+	 qb:dataSet :ds1_10_17;
+	 qb:dataSet :ds1_10_18;
+	 qb:dataSet :ds1_10_19;
+	 qb:dataSet :ds1_10_20;
+	 qb:dataSet :ds1_10_21;
+	 qb:dataSet :ds1_10_22;
+	 qb:dataSet :ds1_10_23;
+	 qb:dataSet :ds1_10_24;
+	 qb:dataSet :ds1_10_25;
+	 qb:dataSet :ds1_10_26;
+	 qb:dataSet :ds1_10_27;
+	 qb:dataSet :ds1_10_28;
+	 qb:dataSet :ds1_10_29;
+	 qb:dataSet :ds1_10_30;
+	 qb:dataSet :ds1_10_31;
+	 qb:dataSet :ds1_10_32;
+	 qb:dataSet :ds1_10_33; 
+ qb:dataSet :ds1_11_1;
+	 qb:dataSet :ds1_11_2;
+	 qb:dataSet :ds1_11_3;
+	 qb:dataSet :ds1_11_4;
+	 qb:dataSet :ds1_11_5;
+	 qb:dataSet :ds1_11_6;
+	 qb:dataSet :ds1_11_7;
+	 qb:dataSet :ds1_11_8;
+	 qb:dataSet :ds1_11_9;
+	 qb:dataSet :ds1_11_10;
+	 qb:dataSet :ds1_11_11;
+	 qb:dataSet :ds1_11_12;
+	 qb:dataSet :ds1_11_13;
+	 qb:dataSet :ds1_11_14;
+	 qb:dataSet :ds1_11_15;
+	 qb:dataSet :ds1_11_16;
+	 qb:dataSet :ds1_11_17;
+	 qb:dataSet :ds1_11_18;
+	 qb:dataSet :ds1_11_19;
+	 qb:dataSet :ds1_11_20;
+	 qb:dataSet :ds1_11_21;
+	 qb:dataSet :ds1_11_22;
+	 qb:dataSet :ds1_11_23;
+	 qb:dataSet :ds1_11_24;
+	 qb:dataSet :ds1_11_25;
+	 qb:dataSet :ds1_11_26;
+	 qb:dataSet :ds1_11_27;
+	 qb:dataSet :ds1_11_28;
+	 qb:dataSet :ds1_11_29;
+	 qb:dataSet :ds1_11_30;
+	 qb:dataSet :ds1_11_31;
+	 qb:dataSet :ds1_11_32;
+	 qb:dataSet :ds1_11_33;
+ qb:dataSet :ds1_12_1;
+	 qb:dataSet :ds1_12_2;
+	 qb:dataSet :ds1_12_3;
+	 qb:dataSet :ds1_12_4;
+	 qb:dataSet :ds1_12_5;
+	 qb:dataSet :ds1_12_6;
+	 qb:dataSet :ds1_12_7;
+	 qb:dataSet :ds1_12_8;
+	 qb:dataSet :ds1_12_9;
+	 qb:dataSet :ds1_12_10;
+	 qb:dataSet :ds1_12_11;
+	 qb:dataSet :ds1_12_12;
+	 qb:dataSet :ds1_12_13;
+	 qb:dataSet :ds1_12_14;
+	 qb:dataSet :ds1_12_15;
+	 qb:dataSet :ds1_12_16;
+	 qb:dataSet :ds1_12_17;
+	 qb:dataSet :ds1_12_18;
+	 qb:dataSet :ds1_12_19;
+	 qb:dataSet :ds1_12_20;
+	 qb:dataSet :ds1_12_21;
+	 qb:dataSet :ds1_12_22;
+	 qb:dataSet :ds1_12_23;
+	 qb:dataSet :ds1_12_24;
+	 qb:dataSet :ds1_12_25;
+	 qb:dataSet :ds1_12_26;
+	 qb:dataSet :ds1_12_27;
+	 qb:dataSet :ds1_12_28;
+	 qb:dataSet :ds1_12_29;
+	 qb:dataSet :ds1_12_30;
+	 qb:dataSet :ds1_12_31;
+	 qb:dataSet :ds1_12_32;
+	 qb:dataSet :ds1_12_33;
+ qb:dataSet :ds1_13_1;
+	 qb:dataSet :ds1_13_2;
+	 qb:dataSet :ds1_13_3;
+	 qb:dataSet :ds1_13_4;
+	 qb:dataSet :ds1_13_5;
+	 qb:dataSet :ds1_13_6;
+	 qb:dataSet :ds1_13_7;
+	 qb:dataSet :ds1_13_8;
+	 qb:dataSet :ds1_13_9;
+	 qb:dataSet :ds1_13_10;
+	 qb:dataSet :ds1_13_11;
+	 qb:dataSet :ds1_13_12;
+	 qb:dataSet :ds1_13_13;
+	 qb:dataSet :ds1_13_14;
+	 qb:dataSet :ds1_13_15;
+	 qb:dataSet :ds1_13_16;
+	 qb:dataSet :ds1_13_17;
+	 qb:dataSet :ds1_13_18;
+	 qb:dataSet :ds1_13_19;
+	 qb:dataSet :ds1_13_20;
+	 qb:dataSet :ds1_13_21;
+	 qb:dataSet :ds1_13_22;
+	 qb:dataSet :ds1_13_23;
+	 qb:dataSet :ds1_13_24;
+	 qb:dataSet :ds1_13_25;
+	 qb:dataSet :ds1_13_26;
+	 qb:dataSet :ds1_13_27;
+	 qb:dataSet :ds1_13_28;
+	 qb:dataSet :ds1_13_29;
+	 qb:dataSet :ds1_13_30;
+	 qb:dataSet :ds1_13_31;
+	 qb:dataSet :ds1_13_32;
+	 qb:dataSet :ds1_13_33;
+ qb:dataSet :ds1_14_1;
+	 qb:dataSet :ds1_14_2;
+	 qb:dataSet :ds1_14_3;
+	 qb:dataSet :ds1_14_4;
+	 qb:dataSet :ds1_14_5;
+	 qb:dataSet :ds1_14_6;
+	 qb:dataSet :ds1_14_7;
+	 qb:dataSet :ds1_14_8;
+	 qb:dataSet :ds1_14_9;
+	 qb:dataSet :ds1_14_10;
+	 qb:dataSet :ds1_14_11;
+	 qb:dataSet :ds1_14_12;
+	 qb:dataSet :ds1_14_13;
+	 qb:dataSet :ds1_14_14;
+	 qb:dataSet :ds1_14_15;
+	 qb:dataSet :ds1_14_16;
+	 qb:dataSet :ds1_14_17;
+	 qb:dataSet :ds1_14_18;
+	 qb:dataSet :ds1_14_19;
+	 qb:dataSet :ds1_14_20;
+	 qb:dataSet :ds1_14_21;
+	 qb:dataSet :ds1_14_22;
+	 qb:dataSet :ds1_14_23;
+	 qb:dataSet :ds1_14_24;
+	 qb:dataSet :ds1_14_25;
+	 qb:dataSet :ds1_14_26;
+	 qb:dataSet :ds1_14_27;
+	 qb:dataSet :ds1_14_28;
+	 qb:dataSet :ds1_14_29;
+	 qb:dataSet :ds1_14_30;
+	 qb:dataSet :ds1_14_31;
+	 qb:dataSet :ds1_14_32;
+	 qb:dataSet :ds1_14_33; 
+ qb:dataSet :ds1_15_1;
+	 qb:dataSet :ds1_15_2;
+	 qb:dataSet :ds1_15_3;
+	 qb:dataSet :ds1_15_4;
+	 qb:dataSet :ds1_15_5;
+	 qb:dataSet :ds1_15_6;
+	 qb:dataSet :ds1_15_7;
+	 qb:dataSet :ds1_15_8;
+	 qb:dataSet :ds1_15_9;
+	 qb:dataSet :ds1_15_10;
+	 qb:dataSet :ds1_15_11;
+	 qb:dataSet :ds1_15_12;
+	 qb:dataSet :ds1_15_13;
+	 qb:dataSet :ds1_15_14;
+	 qb:dataSet :ds1_15_15;
+	 qb:dataSet :ds1_15_16;
+	 qb:dataSet :ds1_15_17;
+	 qb:dataSet :ds1_15_18;
+	 qb:dataSet :ds1_15_19;
+	 qb:dataSet :ds1_15_20;
+	 qb:dataSet :ds1_15_21;
+	 qb:dataSet :ds1_15_22;
+	 qb:dataSet :ds1_15_23;
+	 qb:dataSet :ds1_15_24;
+	 qb:dataSet :ds1_15_25;
+	 qb:dataSet :ds1_15_26;
+	 qb:dataSet :ds1_15_27;
+	 qb:dataSet :ds1_15_28;
+	 qb:dataSet :ds1_15_29;
+	 qb:dataSet :ds1_15_30;
+	 qb:dataSet :ds1_15_31;
+	 qb:dataSet :ds1_15_32;
+	 qb:dataSet :ds1_15_33;
+ qb:dataSet :ds1_16_1;
+	 qb:dataSet :ds1_16_2;
+	 qb:dataSet :ds1_16_3;
+	 qb:dataSet :ds1_16_4;
+	 qb:dataSet :ds1_16_5;
+	 qb:dataSet :ds1_16_6;
+	 qb:dataSet :ds1_16_7;
+	 qb:dataSet :ds1_16_8;
+	 qb:dataSet :ds1_16_9;
+	 qb:dataSet :ds1_16_10;
+	 qb:dataSet :ds1_16_11;
+	 qb:dataSet :ds1_16_12;
+	 qb:dataSet :ds1_16_13;
+	 qb:dataSet :ds1_16_14;
+	 qb:dataSet :ds1_16_15;
+	 qb:dataSet :ds1_16_16;
+	 qb:dataSet :ds1_16_17;
+	 qb:dataSet :ds1_16_18;
+	 qb:dataSet :ds1_16_19;
+	 qb:dataSet :ds1_16_20;
+	 qb:dataSet :ds1_16_21;
+	 qb:dataSet :ds1_16_22;
+	 qb:dataSet :ds1_16_23;
+	 qb:dataSet :ds1_16_24;
+	 qb:dataSet :ds1_16_25;
+	 qb:dataSet :ds1_16_26;
+	 qb:dataSet :ds1_16_27;
+	 qb:dataSet :ds1_16_28;
+	 qb:dataSet :ds1_16_29;
+	 qb:dataSet :ds1_16_30;
+	 qb:dataSet :ds1_16_31;
+	 qb:dataSet :ds1_16_32;
+	 qb:dataSet :ds1_16_33;
+
+	 . 
+
+:ds1_1_1 rdf:type qb:Observation; 
+	 rdf:value 15; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_2 rdf:type qb:Observation; 
+	 rdf:value 13; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_3 rdf:type qb:Observation; 
+	 rdf:value 28; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_4 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_5 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_6 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_7 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_8 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_1_9 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_10 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_11 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_12 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_13 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_14 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_15 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_16 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_17 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_1_18 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_19 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_20 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_21 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_22 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_23 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_24 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_25 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_26 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_1_27 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_28 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_29 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_30 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_31 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_32 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_1_33 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_1 rdf:type qb:Observation; 
+	 rdf:value 1785; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_2 rdf:type qb:Observation; 
+	 rdf:value 1370; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_3 rdf:type qb:Observation; 
+	 rdf:value 3155; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_4 rdf:type qb:Observation; 
+	 rdf:value 648; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_5 rdf:type qb:Observation; 
+	 rdf:value 449; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_6 rdf:type qb:Observation; 
+	 rdf:value 1097; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_7 rdf:type qb:Observation; 
+	 rdf:value 0.363; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_8 rdf:type qb:Observation; 
+	 rdf:value 0.328; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_9 rdf:type qb:Observation; 
+	 rdf:value 0.348; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_10 rdf:type qb:Observation; 
+	 rdf:value 0.79; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_11 rdf:type qb:Observation; 
+	 rdf:value 0.004; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_12 rdf:type qb:Observation; 
+	 rdf:value 0.206; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_13 rdf:type qb:Observation; 
+	 rdf:value 0.635; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_14 rdf:type qb:Observation; 
+	 rdf:value 0.14; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_15 rdf:type qb:Observation; 
+	 rdf:value 0.443; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_16 rdf:type qb:Observation; 
+	 rdf:value 0.193; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_17 rdf:type qb:Observation; 
+	 rdf:value 0.048; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_18 rdf:type qb:Observation; 
+	 rdf:value 0.086; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_19 rdf:type qb:Observation; 
+	 rdf:value 0.26; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_20 rdf:type qb:Observation; 
+	 rdf:value 0.199; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_21 rdf:type qb:Observation; 
+	 rdf:value 0.079; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_22 rdf:type qb:Observation; 
+	 rdf:value 0.33; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_23 rdf:type qb:Observation; 
+	 rdf:value 0.147; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_24 rdf:type qb:Observation; 
+	 rdf:value 0.026; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_25 rdf:type qb:Observation; 
+	 rdf:value 0.013; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_26 rdf:type qb:Observation; 
+	 rdf:value 0.237; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_2_27 rdf:type qb:Observation; 
+	 rdf:value 0.383; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_28 rdf:type qb:Observation; 
+	 rdf:value 0.081; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_29 rdf:type qb:Observation; 
+	 rdf:value 0.167; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_30 rdf:type qb:Observation; 
+	 rdf:value 0.092; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_31 rdf:type qb:Observation; 
+	 rdf:value 0.028; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_32 rdf:type qb:Observation; 
+	 rdf:value 0.066; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_2_33 rdf:type qb:Observation; 
+	 rdf:value 0.481; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Manufacturing; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_1 rdf:type qb:Observation; 
+	 rdf:value 130; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_2 rdf:type qb:Observation; 
+	 rdf:value 71; 
+	 qb:DataSet :ds1; 
+ qb:DimensionProperty 
+ :WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_3 rdf:type qb:Observation; 
+	 rdf:value 201; 
+	 qb:DataSet :ds1; 
+ qb:DimensionProperty   
+ :WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_4 rdf:type qb:Observation; 
+	 rdf:value 50; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+ :WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_5 rdf:type qb:Observation; 
+	 rdf:value 20; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_6 rdf:type qb:Observation; 
+	 rdf:value 70; 
+	 qb:DataSet :ds1; 
+qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_7 rdf:type qb:Observation; 
+	 rdf:value 0.385; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_8 rdf:type qb:Observation; 
+	 rdf:value 0.282; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_9 rdf:type qb:Observation; 
+	 rdf:value 0.348; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty
+ 	:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_10 rdf:type qb:Observation; 
+	 rdf:value 0.9; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_11 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_12 rdf:type qb:Observation; 
+	 rdf:value 0.1; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_13 rdf:type qb:Observation; 
+	 rdf:value 0.686; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_14 rdf:type qb:Observation; 
+	 rdf:value 0.157; 
+	 qb:DataSet :ds1; 
+ qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_15 rdf:type qb:Observation; 
+	 rdf:value 0.571; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_16 rdf:type qb:Observation; 
+	 rdf:value 0.214; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_17 rdf:type qb:Observation; 
+	 rdf:value 0.057; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_3_18 rdf:type qb:Observation; 
+	 rdf:value 0.1; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_19 rdf:type qb:Observation; 
+	 rdf:value 0.214; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty
+ 	:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_20 rdf:type qb:Observation; 
+	 rdf:value 0.286; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_21 rdf:type qb:Observation; 
+	 rdf:value 0.043; 
+	 qb:DataSet :ds1; 
+ qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_22 rdf:type qb:Observation; 
+	 rdf:value 0.371; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_23 rdf:type qb:Observation; 
+	 rdf:value 0.157; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_24 rdf:type qb:Observation; 
+	 rdf:value 0.014; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_25 rdf:type qb:Observation; 
+	 rdf:value 0.043; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_26 rdf:type qb:Observation; 
+	 rdf:value 0.243; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_3_27 rdf:type qb:Observation; 
+	 rdf:value 0.386; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_28 rdf:type qb:Observation; 
+	 rdf:value 0.071; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_29 rdf:type qb:Observation; 
+	 rdf:value 0.229; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_30 rdf:type qb:Observation; 
+	 rdf:value 0.143; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_31 rdf:type qb:Observation; 
+	 rdf:value 0.029; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_32 rdf:type qb:Observation; 
+	 rdf:value 0.071; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_3_33 rdf:type qb:Observation; 
+	 rdf:value 0.457; 
+	 qb:DataSet :ds1; 
+ qb:DimensionProperty 
+:WaterSupplySewerageWasteManagementAndRemediationActivities; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_1 rdf:type qb:Observation; 
+	 rdf:value 722; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_2 rdf:type qb:Observation; 
+	 rdf:value 312; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_3 rdf:type qb:Observation; 
+	 rdf:value 1034; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :MiningAndQuarrying; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_4 rdf:type qb:Observation; 
+	 rdf:value 208; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_5 rdf:type qb:Observation; 
+	 rdf:value 76; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_6 rdf:type qb:Observation; 
+	 rdf:value 284; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_7 rdf:type qb:Observation; 
+	 rdf:value 0.288; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_8 rdf:type qb:Observation; 
+	 rdf:value 0.244; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_4_9 rdf:type qb:Observation; 
+	 rdf:value 0.275; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_10 rdf:type qb:Observation; 
+	 rdf:value 0.732; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_11 rdf:type qb:Observation; 
+	 rdf:value 0.007; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_12 rdf:type qb:Observation; 
+	 rdf:value 0.261; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_13 rdf:type qb:Observation; 
+	 rdf:value 0.809; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_14 rdf:type qb:Observation; 
+	 rdf:value 0.135; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_15 rdf:type qb:Observation; 
+	 rdf:value 0.599; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_16 rdf:type qb:Observation; 
+	 rdf:value 0.287; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_17 rdf:type qb:Observation; 
+	 rdf:value 0.06; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_4_18 rdf:type qb:Observation; 
+	 rdf:value 0.096; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_19 rdf:type qb:Observation; 
+	 rdf:value 0.117; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_20 rdf:type qb:Observation; 
+	 rdf:value 0.291; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_21 rdf:type qb:Observation; 
+	 rdf:value 0.057; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_22 rdf:type qb:Observation; 
+	 rdf:value 0.443; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_23 rdf:type qb:Observation; 
+	 rdf:value 0.234; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_24 rdf:type qb:Observation; 
+	 rdf:value 0.021; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_25 rdf:type qb:Observation; 
+	 rdf:value 0.018; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_26 rdf:type qb:Observation; 
+	 rdf:value 0.27; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_27 rdf:type qb:Observation; 
+	 rdf:value 0.429; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_28 rdf:type qb:Observation; 
+	 rdf:value 0.032; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_29 rdf:type qb:Observation; 
+	 rdf:value 0.174; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_30 rdf:type qb:Observation; 
+	 rdf:value 0.096; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_31 rdf:type qb:Observation; 
+	 rdf:value 0.05; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_32 rdf:type qb:Observation; 
+	 rdf:value 0.11; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_4_33 rdf:type qb:Observation; 
+	 rdf:value 0.422; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Construction; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_1 rdf:type qb:Observation; 
+	 rdf:value 1819; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_2 rdf:type qb:Observation; 
+	 rdf:value 1180; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_3 rdf:type qb:Observation; 
+	 rdf:value 2999; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_4 rdf:type qb:Observation; 
+	 rdf:value 686; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_5 rdf:type qb:Observation; 
+	 rdf:value 344; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_6 rdf:type qb:Observation; 
+	 rdf:value 1030; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_7 rdf:type qb:Observation; 
+	 rdf:value 0.377; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_8 rdf:type qb:Observation; 
+	 rdf:value 0.292; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_5_9 rdf:type qb:Observation; 
+	 rdf:value 0.343; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_10 rdf:type qb:Observation; 
+	 rdf:value 0.752; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_11 rdf:type qb:Observation; 
+	 rdf:value 0.005; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_12 rdf:type qb:Observation; 
+	 rdf:value 0.243; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_13 rdf:type qb:Observation; 
+	 rdf:value 0.726; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_14 rdf:type qb:Observation; 
+	 rdf:value 0.446; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_15 rdf:type qb:Observation; 
+	 rdf:value 0.601; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_16 rdf:type qb:Observation; 
+	 rdf:value 0.25; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_17 rdf:type qb:Observation; 
+	 rdf:value 0.133; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_18 rdf:type qb:Observation; 
+	 rdf:value 0.09; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_19 rdf:type qb:Observation; 
+	 rdf:value 0.155; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_20 rdf:type qb:Observation; 
+	 rdf:value 0.239; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_21 rdf:type qb:Observation; 
+	 rdf:value 0.334; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_22 rdf:type qb:Observation; 
+	 rdf:value 0.469; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_23 rdf:type qb:Observation; 
+	 rdf:value 0.183; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_24 rdf:type qb:Observation; 
+	 rdf:value 0.091; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_25 rdf:type qb:Observation; 
+	 rdf:value 0.015; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_26 rdf:type qb:Observation; 
+	 rdf:value 0.16; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_27 rdf:type qb:Observation; 
+	 rdf:value 0.321; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_28 rdf:type qb:Observation; 
+	 rdf:value 0.093; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_29 rdf:type qb:Observation; 
+	 rdf:value 0.158; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_30 rdf:type qb:Observation; 
+	 rdf:value 0.076; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_31 rdf:type qb:Observation; 
+	 rdf:value 0.042; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_32 rdf:type qb:Observation; 
+	 rdf:value 0.083; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_5_33 rdf:type qb:Observation; 
+	 rdf:value 0.538; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :WholesaleAndRetailTradeRepairOfMotorVehiclesAndMotorcycles; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_1 rdf:type qb:Observation; 
+	 rdf:value 975; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_2 rdf:type qb:Observation; 
+	 rdf:value 659; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_3 rdf:type qb:Observation; 
+	 rdf:value 1634; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_4 rdf:type qb:Observation; 
+	 rdf:value 321; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_5 rdf:type qb:Observation; 
+	 rdf:value 195; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_6 rdf:type qb:Observation; 
+	 rdf:value 516; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_7 rdf:type qb:Observation; 
+	 rdf:value 0.329; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_8 rdf:type qb:Observation; 
+	 rdf:value 0.296; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_9 rdf:type qb:Observation; 
+	 rdf:value 0.316; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_10 rdf:type qb:Observation; 
+	 rdf:value 0.182; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_11 rdf:type qb:Observation; 
+	 rdf:value 0.012; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_12 rdf:type qb:Observation; 
+	 rdf:value 0.806; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_13 rdf:type qb:Observation; 
+	 rdf:value 0.871; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_14 rdf:type qb:Observation; 
+	 rdf:value 0.782; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_15 rdf:type qb:Observation; 
+	 rdf:value 0.806; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_16 rdf:type qb:Observation; 
+	 rdf:value 0.422; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_17 rdf:type qb:Observation; 
+	 rdf:value 0.249; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_18 rdf:type qb:Observation; 
+	 rdf:value 0.206; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_19 rdf:type qb:Observation; 
+	 rdf:value 0.027; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_20 rdf:type qb:Observation; 
+	 rdf:value 0.251; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_21 rdf:type qb:Observation; 
+	 rdf:value 0.633; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_22 rdf:type qb:Observation; 
+	 rdf:value 0.596; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_23 rdf:type qb:Observation; 
+	 rdf:value 0.306; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_24 rdf:type qb:Observation; 
+	 rdf:value 0.178; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_25 rdf:type qb:Observation; 
+	 rdf:value 0.035; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_26 rdf:type qb:Observation; 
+	 rdf:value 0.129; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_27 rdf:type qb:Observation; 
+	 rdf:value 0.404; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_28 rdf:type qb:Observation; 
+	 rdf:value 0.18; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_29 rdf:type qb:Observation; 
+	 rdf:value 0.235; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_30 rdf:type qb:Observation; 
+	 rdf:value 0.137; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_31 rdf:type qb:Observation; 
+	 rdf:value 0.061; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_32 rdf:type qb:Observation; 
+	 rdf:value 0.122; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_6_33 rdf:type qb:Observation; 
+	 rdf:value 0.398; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AccommodationAndFoodServiceActivities; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_1 rdf:type qb:Observation; 
+	 rdf:value528; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_2 rdf:type qb:Observation; 
+	 rdf:value 335; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_3 rdf:type qb:Observation; 
+	 rdf:value 863; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_4 rdf:type qb:Observation; 
+	 rdf:value 193; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_5 rdf:type qb:Observation; 
+	 rdf:value 89; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_6 rdf:type qb:Observation; 
+	 rdf:value 282; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_7 rdf:type qb:Observation; 
+	 rdf:value 0.366; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_8 rdf:type qb:Observation; 
+	 rdf:value 0.266; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_9 rdf:type qb:Observation; 
+	 rdf:value 0.327; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_10 rdf:type qb:Observation; 
+	 rdf:value 0.915; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_11 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_12 rdf:type qb:Observation; 
+	 rdf:value 0.085; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_13 rdf:type qb:Observation; 
+	 rdf:value 0.766; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_14 rdf:type qb:Observation; 
+	 rdf:value 0.241; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_15 rdf:type qb:Observation; 
+	 rdf:value 0.553; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_16 rdf:type qb:Observation; 
+	 rdf:value 0.248; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_17 rdf:type qb:Observation; 
+	 rdf:value 0.064; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_18 rdf:type qb:Observation; 
+	 rdf:value 0.092; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_19 rdf:type qb:Observation; 
+	 rdf:value 0.167; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_20 rdf:type qb:Observation; 
+	 rdf:value 0.287; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_21 rdf:type qb:Observation; 
+	 rdf:value 0.145; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_22 rdf:type qb:Observation; 
+	 rdf:value 0.44; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1__23 rdf:type qb:Observation; 
+	 rdf:value 0.188; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_24 rdf:type qb:Observation; 
+	 rdf:value 0.025; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_25 rdf:type qb:Observation; 
+	 rdf:value 0.025; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_26 rdf:type qb:Observation; 
+	 rdf:value 0.184; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_27 rdf:type qb:Observation; 
+	 rdf:value 0.355; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_28 rdf:type qb:Observation; 
+	 rdf:value 0.096; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_29 rdf:type qb:Observation; 
+	 rdf:value 0.199; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_30 rdf:type qb:Observation; 
+	 rdf:value 0.078; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_31 rdf:type qb:Observation; 
+	 rdf:value 0.021; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_32 rdf:type qb:Observation; 
+	 rdf:value 0.074; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_7_33 rdf:type qb:Observation; 
+	 rdf:value 0.489; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :TransportationAndStorage; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_1 rdf:type qb:Observation; 
+	 rdf:value 794; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_2 rdf:type qb:Observation; 
+	 rdf:value 422; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_3 rdf:type qb:Observation; 
+	 rdf:value 1216; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_4 rdf:type qb:Observation; 
+	 rdf:value 297; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_5 rdf:type qb:Observation; 
+	 rdf:value 121; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_6 rdf:type qb:Observation; 
+	 rdf:value 418; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_7 rdf:type qb:Observation; 
+	 rdf:value 0.374; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_8 rdf:type qb:Observation; 
+	 rdf:value 0.287; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_8_9 rdf:type qb:Observation; 
+	 rdf:value 0.344; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_10 rdf:type qb:Observation; 
+	 rdf:value 0.95; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_11 rdf:type qb:Observation; 
+	 rdf:value 0.005; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_12 rdf:type qb:Observation; 
+	 rdf:value 0.045; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_13 rdf:type qb:Observation; 
+	 rdf:value 0.401; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_14 rdf:type qb:Observation; 
+	 rdf:value 0.082; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_15 rdf:type qb:Observation; 
+	 rdf:value 0.474; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_16 rdf:type qb:Observation; 
+	 rdf:value 0.137; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_17 rdf:type qb:Observation; 
+	 rdf:value 0.036; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_18 rdf:type qb:Observation; 
+	 rdf:value 0.038; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_19 rdf:type qb:Observation; 
+	 rdf:value 0.373; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_20 rdf:type qb:Observation; 
+	 rdf:value 0.154; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_21 rdf:type qb:Observation; 
+	 rdf:value 0.031; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_22 rdf:type qb:Observation; 
+	 rdf:value 0.397; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_23 rdf:type qb:Observation; 
+	 rdf:value 0.106; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_24 rdf:type qb:Observation; 
+	 rdf:value 0.017; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_25 rdf:type qb:Observation; 
+	 rdf:value 0.01; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_26 rdf:type qb:Observation; 
+	 rdf:value 0.127; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_8_27 rdf:type qb:Observation; 
+	 rdf:value 0.26; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_28 rdf:type qb:Observation; 
+	 rdf:value 0.07; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_29 rdf:type qb:Observation; 
+	 rdf:value 0.163; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_30 rdf:type qb:Observation; 
+	 rdf:value 0.067; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_31 rdf:type qb:Observation; 
+	 rdf:value 0.029; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_32 rdf:type qb:Observation; 
+	 rdf:value 0.05; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_8_33 rdf:type qb:Observation; 
+	 rdf:value 0.587; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :InformationAndCommunication; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_1 rdf:type qb:Observation; 
+	 rdf:value 112; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_2 rdf:type qb:Observation; 
+	 rdf:value 88; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_3 rdf:type qb:Observation; 
+	 rdf:value 200; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_4 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_5 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_6 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_7 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_8 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_9 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_10 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_11 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_12 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_13 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_14 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_15 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_16 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_17 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_18 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_19 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_20 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_21 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_22 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_23 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_24 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_25 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_26 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_9_27 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_28 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_29 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_30 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_31 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_32 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_9_33 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :RealEstateActivities; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_1 rdf:type qb:Observation; 
+	 rdf:value 1303; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_2 rdf:type qb:Observation; 
+	 rdf:value 720; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_3 rdf:type qb:Observation; 
+	 rdf:value 2023; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_4 rdf:type qb:Observation; 
+	 rdf:value 468; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_5 rdf:type qb:Observation; 
+	 rdf:value 265; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_6 rdf:type qb:Observation; 
+	 rdf:value 733; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_7 rdf:type qb:Observation; 
+	 rdf:value 0.359; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_8 rdf:type qb:Observation; 
+	 rdf:value 0.368; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_9 rdf:type qb:Observation; 
+	 rdf:value 0.362; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_10 rdf:type qb:Observation; 
+	 rdf:value 0.967; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_11 rdf:type qb:Observation; 
+	 rdf:value 0.003; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_12 rdf:type qb:Observation; 
+	 rdf:value 0.03; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_13 rdf:type qb:Observation; 
+	 rdf:value 0.622; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_14 rdf:type qb:Observation; 
+	 rdf:value 0.126; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_15 rdf:type qb:Observation; 
+	 rdf:value 0.662; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_16 rdf:type qb:Observation; 
+	 rdf:value 0.186; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_17 rdf:type qb:Observation; 
+	 rdf:value 0.049; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_18 rdf:type qb:Observation; 
+	 rdf:value 0.081; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_19 rdf:type qb:Observation; 
+	 rdf:value 0.207; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_20 rdf:type qb:Observation; 
+	 rdf:value 0.216; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_21 rdf:type qb:Observation; 
+	 rdf:value 0.078; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_22 rdf:type qb:Observation; 
+	 rdf:value 0.518; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_23 rdf:type qb:Observation; 
+	 rdf:value 0.146; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_24 rdf:type qb:Observation; 
+	 rdf:value 0.022; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_25 rdf:type qb:Observation; 
+	 rdf:value 0.023; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_26 rdf:type qb:Observation; 
+	 rdf:value 0.176; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_27 rdf:type qb:Observation; 
+	 rdf:value 0.35; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_28 rdf:type qb:Observation; 
+	 rdf:value 0.073; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_29 rdf:type qb:Observation; 
+	 rdf:value 0.228; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_30 rdf:type qb:Observation; 
+	 rdf:value 0.083; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_31 rdf:type qb:Observation; 
+	 rdf:value 0.023; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_32 rdf:type qb:Observation; 
+	 rdf:value 0.074; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_10_33 rdf:type qb:Observation; 
+	 rdf:value 0.503; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ProfessionalScientificAndTechnicalActivities; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_1 rdf:type qb:Observation; 
+	 rdf:value 1287; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_2 rdf:type qb:Observation; 
+	 rdf:value 1072; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_3 rdf:type qb:Observation; 
+	 rdf:value 2359; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_4 rdf:type qb:Observation; 
+	 rdf:value 453; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_5 rdf:type qb:Observation; 
+	 rdf:value 361; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_6 rdf:type qb:Observation; 
+	 rdf:value 814; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_7 rdf:type qb:Observation; 
+	 rdf:value 0.352; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_8 rdf:type qb:Observation; 
+	 rdf:value 0.337; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_9 rdf:type qb:Observation; 
+	 rdf:value 0.345; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_10 rdf:type qb:Observation; 
+	 rdf:value 0.915; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_11 rdf:type qb:Observation; 
+	 rdf:value 0.004; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_12 rdf:type qb:Observation; 
+	 rdf:value 0.081; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_13 rdf:type qb:Observation; 
+	 rdf:value 0.757; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_14 rdf:type qb:Observation; 
+	 rdf:value 0.201; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_15 rdf:type qb:Observation; 
+	 rdf:value 0.637; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_16 rdf:type qb:Observation; 
+	 rdf:value 0.205; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_17 rdf:type qb:Observation; 
+	 rdf:value 0.218; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_18 rdf:type qb:Observation; 
+	 rdf:value 0.123; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_19 rdf:type qb:Observation; 
+	 rdf:value 0.139; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_20 rdf:type qb:Observation; 
+	 rdf:value 0.28; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_21 rdf:type qb:Observation; 
+	 rdf:value 0.12; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_22 rdf:type qb:Observation; 
+	 rdf:value 0.469; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_23 rdf:type qb:Observation; 
+	 rdf:value 0.147; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_24 rdf:type qb:Observation; 
+	 rdf:value 0.144; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_25 rdf:type qb:Observation; 
+	 rdf:value 0.017; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_26 rdf:type qb:Observation; 
+	 rdf:value 0.206; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_27 rdf:type qb:Observation; 
+	 rdf:value 0.401; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_28 rdf:type qb:Observation; 
+	 rdf:value 0.089; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_29 rdf:type qb:Observation; 
+	 rdf:value 0.227; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_30 rdf:type qb:Observation; 
+	 rdf:value 0.102; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_31 rdf:type qb:Observation; 
+	 rdf:value 0.063; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_32 rdf:type qb:Observation; 
+	 rdf:value 0.09; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_11_33 rdf:type qb:Observation; 
+	 rdf:value 0.45; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AdministrativeAndSupportServiceActivities; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_1 rdf:type qb:Observation; 
+	 rdf:value 303; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_2 rdf:type qb:Observation; 
+	 rdf:value 457; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_3 rdf:type qb:Observation; 
+	 rdf:value 760; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_4 rdf:type qb:Observation; 
+	 rdf:value 127; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_5 rdf:type qb:Observation; 
+	 rdf:value 191; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_6 rdf:type qb:Observation; 
+	 rdf:value 318; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_7 rdf:type qb:Observation; 
+	 rdf:value 0.419; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_8 rdf:type qb:Observation; 
+	 rdf:value 0.418; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_9 rdf:type qb:Observation; 
+	 rdf:value 0.418; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_10 rdf:type qb:Observation; 
+	 rdf:value 0.868; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_11 rdf:type qb:Observation; 
+	 rdf:value 0.006; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_12 rdf:type qb:Observation; 
+	 rdf:value 0.126; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_13 rdf:type qb:Observation; 
+	 rdf:value 0.405; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_14 rdf:type qb:Observation; 
+	 rdf:value 0.085; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_15 rdf:type qb:Observation; 
+	 rdf:value 0.263; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_16 rdf:type qb:Observation; 
+	 rdf:value 0.07; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_17 rdf:type qb:Observation; 
+	 rdf:value 0.022; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_18 rdf:type qb:Observation; 
+	 rdf:value 0.028; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_19 rdf:type qb:Observation; 
+	 rdf:value 0.484; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_20 rdf:type qb:Observation; 
+	 rdf:value 0.098; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_21 rdf:type qb:Observation; 
+	 rdf:value 0.038; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_22 rdf:type qb:Observation; 
+	 rdf:value 0.184; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_23 rdf:type qb:Observation; 
+	 rdf:value 0.057; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_24 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_25 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_26 rdf:type qb:Observation; 
+	 rdf:value 0.228; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_27 rdf:type qb:Observation; 
+	 rdf:value 0.459; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_28 rdf:type qb:Observation; 
+	 rdf:value 0.098; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_29 rdf:type qb:Observation; 
+	 rdf:value 0.174; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_30 rdf:type qb:Observation; 
+	 rdf:value 0.022; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_31 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_32 rdf:type qb:Observation; 
+	 rdf:value 0.066; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_12_33 rdf:type qb:Observation; 
+	 rdf:value 0.421; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :Education; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_1 rdf:type qb:Observation; 
+	 rdf:value 145; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_2 rdf:type qb:Observation; 
+	 rdf:value 149; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_3 rdf:type qb:Observation; 
+	 rdf:value 294; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_4 rdf:type qb:Observation; 
+	 rdf:value 85; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_5 rdf:type qb:Observation; 
+	 rdf:value 59; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_6 rdf:type qb:Observation; 
+	 rdf:value 144; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_7 rdf:type qb:Observation; 
+	 rdf:value 0.586; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_8 rdf:type qb:Observation; 
+	 rdf:value 0.396; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_9 rdf:type qb:Observation; 
+	 rdf:value 0.49; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_10 rdf:type qb:Observation; 
+	 rdf:value 0.938; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_11 rdf:type qb:Observation; 
+	 rdf:value 0.013; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_12 rdf:type qb:Observation; 
+	 rdf:value 0.049; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_13 rdf:type qb:Observation; 
+	 rdf:value 0.345; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_14 rdf:type qb:Observation; 
+	 rdf:value 0.134; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_15 rdf:type qb:Observation; 
+	 rdf:value 0.162; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_16 rdf:type qb:Observation; 
+	 rdf:value 0.063; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_17 rdf:type qb:Observation; 
+	 rdf:value 0.106; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_18 rdf:type qb:Observation; 
+	 rdf:value 0.028; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_19 rdf:type qb:Observation; 
+	 rdf:value 0.556; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_20 rdf:type qb:Observation; 
+	 rdf:value 0.085; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_21 rdf:type qb:Observation; 
+	 rdf:value 0.092; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_22 rdf:type qb:Observation; 
+	 rdf:value 0.155; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_23 rdf:type qb:Observation; 
+	 rdf:value 0.042; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_24 rdf:type qb:Observation; 
+	 rdf:value 0.7; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_25 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_26 rdf:type qb:Observation; 
+	 rdf:value 0.141; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_27 rdf:type qb:Observation; 
+	 rdf:value 0.31; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_28 rdf:type qb:Observation; 
+	 rdf:value 0.042; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_29 rdf:type qb:Observation; 
+	 rdf:value 0.099; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_30 rdf:type qb:Observation; 
+	 rdf:value 0.056; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_31 rdf:type qb:Observation; 
+	 rdf:value 0.035; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_32 rdf:type qb:Observation; 
+	 rdf:value 0.014; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_13_33 rdf:type qb:Observation; 
+	 rdf:value 0.585; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :HumanHealthAndSocialWorkActivities; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_1 rdf:type qb:Observation; 
+	 rdf:value 415; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_2 rdf:type qb:Observation; 
+	 rdf:value 303; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_3 rdf:type qb:Observation; 
+	 rdf:value 718; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_4 rdf:type qb:Observation; 
+	 rdf:value 180; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_5 rdf:type qb:Observation; 
+	 rdf:value 98; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_6 rdf:type qb:Observation; 
+	 rdf:value 278; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_7 rdf:type qb:Observation; 
+	 rdf:value 0.434; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_8 rdf:type qb:Observation; 
+	 rdf:value 0.323; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_9 rdf:type qb:Observation; 
+	 rdf:value 0.387; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_10 rdf:type qb:Observation; 
+	 rdf:value 0.205; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_11 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_12 rdf:type qb:Observation; 
+	 rdf:value 0.795; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_13 rdf:type qb:Observation; 
+	 rdf:value 0.763; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_14 rdf:type qb:Observation; 
+	 rdf:value 0.572; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_15 rdf:type qb:Observation; 
+	 rdf:value 0.612; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_16 rdf:type qb:Observation; 
+	 rdf:value 0.331; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_17 rdf:type qb:Observation; 
+	 rdf:value 0.18; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_18 rdf:type qb:Observation; 
+	 rdf:value 0.183; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_19 rdf:type qb:Observation; 
+	 rdf:value 0.126; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_20 rdf:type qb:Observation; 
+	 rdf:value 0.219; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_21 rdf:type qb:Observation; 
+	 rdf:value 0.45; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_22 rdf:type qb:Observation; 
+	 rdf:value 0.435; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_23 rdf:type qb:Observation; 
+	 rdf:value 0.255; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_24 rdf:type qb:Observation; 
+	 rdf:value 0.108; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_25 rdf:type qb:Observation; 
+	 rdf:value 0.043; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_26 rdf:type qb:Observation; 
+	 rdf:value 0.176; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_27 rdf:type qb:Observation; 
+	 rdf:value 0.41; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_28 rdf:type qb:Observation; 
+	 rdf:value 0.122; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_29 rdf:type qb:Observation; 
+	 rdf:value 0.212; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_30 rdf:type qb:Observation; 
+	 rdf:value 0.104; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_31 rdf:type qb:Observation; 
+	 rdf:value 0.058; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_32 rdf:type qb:Observation; 
+	 rdf:value 0.108; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_14_33 rdf:type qb:Observation; 
+	 rdf:value 0.392; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :ArtsEntertainmentAndRecreation; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_1 rdf:type qb:Observation; 
+	 rdf:value 108; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_2 rdf:type qb:Observation; 
+	 rdf:value 29; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_3 rdf:type qb:Observation; 
+	 rdf:value 137; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_4 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_5 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_6 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_7 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_8 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_15_9 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_10 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_11 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_12 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_13 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_14 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_15 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_16 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_17 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_15_18 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_19 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_20 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_21 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_22 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_23 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_24 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_25 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_26 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+:ds1_15_27 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_28 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_29 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_30 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_31 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_32 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_15_33 rdf:type qb:Observation; 
+	 rdf:value 0; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :OtherServiceActivities; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_1 rdf:type qb:Observation; 
+	 rdf:value 10442; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :SentOutSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_2 rdf:type qb:Observation; 
+	 rdf:value 7181; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty  :SentOutSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_3 rdf:type qb:Observation; 
+	 rdf:value 17623; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :SentOutSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_4 rdf:type qb:Observation; 
+	 rdf:value 3809; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :RespondedSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_5 rdf:type qb:Observation; 
+	 rdf:value 2305; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :RespondedSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_6 rdf:type qb:Observation; 
+	 rdf:value 6114; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :RespondedSurveysTotal ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_7 rdf:type qb:Observation; 
+	 rdf:value 0.365; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFLessThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_8 rdf:type qb:Observation; 
+	 rdf:value 0.321; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :RespondedProportionSurveysWFMoreThan250;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_9 rdf:type qb:Observation; 
+	 rdf:value 0.347; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :RespondedProportionSurveysTotal;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_10 rdf:type qb:Observation; 
+	 rdf:value 0.767; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :TradingStatusCont;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_11 rdf:type qb:Observation; 
+	 rdf:value 0.005; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :TradingStatusCeased;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_12 rdf:type qb:Observation; 
+	 rdf:value 0.228; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :TradingStatusPaused;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_13 rdf:type qb:Observation; 
+	 rdf:value 0.672; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :AppliedForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_14 rdf:type qb:Observation; 
+	 rdf:value 0.274; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :AppliedForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_15 rdf:type qb:Observation; 
+	 rdf:value 0.564; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :AppliedForVAT ;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_16 rdf:type qb:Observation; 
+	 rdf:value 0.223; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :AppliedForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_17 rdf:type qb:Observation; 
+	 rdf:value 0.112; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :AppliedForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_18 rdf:type qb:Observation; 
+	 rdf:value 0.099; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :AppliedForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_19 rdf:type qb:Observation; 
+	 rdf:value 0.207; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :AppliedForNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_20 rdf:type qb:Observation; 
+	 rdf:value 0.222; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :ReceivedCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_21 rdf:type qb:Observation; 
+	 rdf:value 0.191; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :ReceivedBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_22 rdf:type qb:Observation; 
+	 rdf:value 0.427; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :ReceivedVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_23 rdf:type qb:Observation; 
+	 rdf:value 0.168; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :ReceivedHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_24 rdf:type qb:Observation; 
+	 rdf:value 0.07; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :ReceivedGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_25 rdf:type qb:Observation; 
+	 rdf:value 0.018; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :ReceivedAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_26 rdf:type qb:Observation; 
+	 rdf:value 0.189; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :ReceivedNone;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_27 rdf:type qb:Observation; 
+	 rdf:value 0.368; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :WillApplyForCJRS;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_28 rdf:type qb:Observation; 
+	 rdf:value 0.091; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :WillApplyForBRH;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_29 rdf:type qb:Observation; 
+	 rdf:value 0.19; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :WillApplyForVAT;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_30 rdf:type qb:Observation; 
+	 rdf:value 0.088; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :WillApplyForHMRC;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_31 rdf:type qb:Observation; 
+	 rdf:value 0.039; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :WillApplyForGovFund;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_32 rdf:type qb:Observation; 
+	 rdf:value 0.08; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :WillApplyForAFA;  
+	 qb:DimensionProperty :TPMay2020.
+
+:ds1_16_33 rdf:type qb:Observation; 
+	 rdf:value 0.482; 
+	 qb:DataSet :ds1; 
+	 qb:DimensionProperty :AllIndustries; 
+	 qb:DimensionProperty :WillApplyForNone;  
+	 qb:DimensionProperty :TPMay2020.
