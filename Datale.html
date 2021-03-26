@@ -1,0 +1,1211 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <style>
+            .bar {
+                fill: steelblue;
+            }
+
+            .highlight {
+                fill: darkblue;
+            }
+        </style>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div class="card" style="width: auto;">        
+      <div class="card-body">
+        <span>Filter: </span>  
+        <span class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Category
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="../HP/Data.html">Industry</a>
+              <a class="dropdown-item" href="../HP/Datal.html">Workforce size</a>
+            </div>
+        </span>
+        <span><h3>Country</h3></span>        
+
+        <span>
+        <button class="btn btn-danger" type="button" id="clear">
+            Clear Chart
+        </button>
+        </span>
+        <span>                           
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTrading" aria-expanded="false" aria-controls="collapseExample">
+            Trade Status
+        </button>
+        </span>
+        <div class="collapse" id="collapseTrading">
+        <div class="card card-body">          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="contToTrade">
+            <label class="form-check-label" for="filter">
+              Trading status: Trading	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="ceasedToTrade">            
+            <label class="form-check-label" for="filter">
+                Trading status: Ceased trading
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="pausedToTrade">
+            <label class="form-check-label" for="filter">
+                Trading status: Paused trading	
+            </label>
+          </div>
+        </div>
+        </div>
+        <span>        
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseApplied" aria-expanded="false" aria-controls="collapseExample">
+            Applied Initiatives
+        </button>
+        </span>
+        <div class="collapse" id="collapseApplied">
+        <div class="card card-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForCJRS">           
+            <label class="form-check-label" for="filter">
+                Applied for: Covid Job Retention Scheme               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForBRH">           
+            <label class="form-check-label" for="filter">                	
+                Applied for: Business rates holiday	                	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForVAT">
+            <label class="form-check-label" for="filter">                
+                Applied for: Deferring VAT payments                
+            </label>
+          </div><div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForHMRC">
+            <label class="form-check-label" for="filter">                	
+                Applied for: HMRC Time To Pay scheme	               	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForGov">            
+            <label class="form-check-label" for="filter">                	
+                Applied for: Government s. business grant/loan schemes               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForAFA">            
+            <label class="form-check-label" for="filter">
+                Applied for: Accredited finance agreements
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForNone">
+            <label class="form-check-label" for="filter">
+                Applied for: None	
+            </label>
+          </div>
+        </div>
+        </div> 
+        <span>                           
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCompare" aria-expanded="false" aria-controls="collapseExample">
+                Compare
+            </button>
+            </span>
+            <div class="collapse" id="collapseCompare">
+            <div class="card card-body"> 
+                
+                <iframe style="height:500px; width: 100%;" src="../HP/Datale.html"></iframe>
+            
+            </div>              
+            </div>          
+     </div>
+     </div>
+
+         
+         
+        
+
+        <script>
+            d3.select("#contToTrade").on("change", displayContToTrade);
+            d3.select("#ceasedToTrade").on("change", displayCeasedToTrade);
+            d3.select("#pausedToTrade").on("change", displayPausedToTrade);
+            d3.select("#appliedForCJRS").on("change", displayAppliedForCJRS);
+            d3.select("#appliedForBRH").on("change", displayAppliedForBRH);
+            d3.select("#appliedForVAT").on("change", displayAppliedForVAT);
+            d3.select("#appliedForHMRC").on("change", displayAppliedForHMRC);
+            d3.select("#appliedForGov").on("change", displayAppliedForGov);
+            d3.select("#appliedForAFA").on("change", displayAppliedForAFA);
+            d3.select("#appliedForNone").on("change", displayAppliedForNone);
+            d3.select("#clear").on("click", clear);            
+
+                
+            function clear() {
+                d3.selectAll("svg").remove();
+            }
+            
+            function displayContToTrade() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        
+                        contToTrade: data["Trading status: Continuing to trade"]                       
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    console.log(countries);
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.contToTrade;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Trading status: Continuing to trade (%)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.contToTrade); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                        
+                        return [d.country + ': ' + Math.round(d.contToTrade * 1000) / 10  + ' %'];
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)             
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayCeasedToTrade() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        	
+                        ceasedToTrade: data["Trading status: Has permanently ceased trading"]	
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.ceasedToTrade;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Trading status: Ceased trading (%)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.ceasedToTrade); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;                                                  
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                        
+                        return [d.country + ': ' + Math.round(d.ceasedToTrade * 1000) / 10  + ' %']; 
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayPausedToTrade() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                       
+                        pausedToTrade: data["Trading status: Has temporarily closed or temporarily paused trading"]                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.pausedToTrade;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Trading status: Paused trading (%)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.pausedToTrade); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                        
+                        return [d.country + ': ' + Math.round(d.pausedToTrade * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+
+
+
+                }
+            }     
+            
+            
+            function displayAppliedForCJRS() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        
+                        appliedForCJRS: data["Applied for: Coronavirus Job Retention Scheme"]                        
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.appliedForCJRS;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: CJRS")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForCJRS); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.country + ': ' + Math.round(d.appliedForCJRS * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForBRH() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        
+                        appliedForBRH: data["Applied for: Business rates holiday"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.appliedForBRH;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Business rates holiday")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForBRH); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.country + ': ' + Math.round(d.appliedForBRH * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForVAT() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],  
+                        appliedForVAT: data["Applied for: Deferring VAT payments"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.appliedForVAT;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Deferring VAT payments")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForVAT); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.country + ': ' + Math.round(d.appliedForVAT * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForHMRC() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        
+                        appliedForHMRC: data["Applied for: HMRC Time To Pay scheme"]                                                                   
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.appliedForHMRC;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: HMRC Time To Pay scheme")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForHMRC); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.country + ': ' + Math.round(d.appliedForHMRC * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForGov() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        	
+                        appliedForGov: data["Applied for: Government-funded small business grant or loan schemes"]	
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.appliedForGov;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Gov-funded s.b. grant/loan schemes")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForGov); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.country + ': ' + Math.round(d.appliedForGov * 1000) / 10 + ' %'];  
+                       });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForAFA() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        	
+                        appliedForAFA: data["Applied for: Accredited finance agreements"]
+                    }                        
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.appliedForAFA;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Accredited finance agreements")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForAFA); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.country + ': ' + Math.round(d.appliedForAFA * 1000) / 10 + ' %'];  
+                     });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForNone() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/Country.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        country: data["Country"],                        
+                        appliedForNone: data["Applied for: We have not applied for any of these initiatives"]                       
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, countries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    countries = countries.slice(0,5);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(countries, function(d){return d.appliedForNone;})])
+                        .range([0, width]);
+                    
+                    var height = countries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(countries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 250 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,-10)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: None")
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(countries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForNone); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return countries[i].country;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                           
+                        return [d.country + ': ' + Math.round(d.appliedForNone * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+     
+            
+            
+            
+             
+        </script>
+        
+    </body>
+</html>

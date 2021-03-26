@@ -1,0 +1,3798 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <style>
+            .bar {
+                fill: steelblue;
+            }
+
+            .highlight {
+                fill: darkblue;
+            }
+        </style>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div class="card" style="width: auto;">        
+      <div class="card-body">
+        <span>Filter: </span>  
+        <span class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Category
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="../HP/Datal.html">Workforce size</a>
+              <a class="dropdown-item" href="../HP/Datale.html">Country</a>              
+            </div>
+        </span> 
+        <span><h3>Industry</h3></span>        
+        
+        <button class="btn btn-danger" type="button" id="clear">
+            Clear Chart
+        </button>
+        <span>           
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseInfo" aria-expanded="false" aria-controls="collapseExample">
+            Survey Information
+        </button>
+        </span>
+        <div class="collapse" id="collapseInfo">
+        <div class="card card-body">              
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="surveyLess250">
+            <label class="form-check-label" for="filter">
+              Surveys Sent Out (WF < 250)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="surveyMore250">
+            <label class="form-check-label" for="filter">
+              Surveys Sent Out (WF 250+)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="surveyTotal">
+            <label class="form-check-label" for="filter">
+              Surveys Sent Out (Total)
+            </label>
+          </div><div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="numOfResWFLess250">
+            <label class="form-check-label" for="filter">
+              Num Of Responses (WF < 250)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="numOfResWFMore250">         
+            <label class="form-check-label" for="filter">
+              Num Of Responses (WF 250+)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="numOfResTotal">        
+            <label class="form-check-label" for="filter">
+              Num Of Responses (Total)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="propOfResLess250">
+            <label class="form-check-label" for="filter">
+              % Responses (WF < 250)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="propOfResMore250">
+            <label class="form-check-label" for="filter">
+              % Response (WF 250+)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="propOfResTotal">
+            <label class="form-check-label" for="filter">
+              % Response (Total)
+            </label>
+          </div>
+        </div>
+        </div>
+        <span>            
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTrading" aria-expanded="false" aria-controls="collapseExample">
+            Trade Status
+        </button>
+        </span>
+        <div class="collapse" id="collapseTrading">
+        <div class="card card-body">          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="contToTrade">
+            <label class="form-check-label" for="filter">
+              Trading status: Trading	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="ceasedToTrade">            
+            <label class="form-check-label" for="filter">
+                Trading status: Ceased trading
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="pausedToTrade">
+            <label class="form-check-label" for="filter">
+                Trading status: Paused trading	
+            </label>
+          </div>
+        </div>
+        </div>
+        <span>        
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseApplied" aria-expanded="false" aria-controls="collapseExample">
+            Applied Initiatives
+        </button>
+        </span>
+        <div class="collapse" id="collapseApplied">
+        <div class="card card-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForCJRS">           
+            <label class="form-check-label" for="filter">
+                Applied for: Covid Job Retention Scheme               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForBRH">           
+            <label class="form-check-label" for="filter">                	
+                Applied for: Business rates holiday	                	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForVAT">
+            <label class="form-check-label" for="filter">                
+                Applied for: Deferring VAT payments                
+            </label>
+          </div><div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForHMRC">
+            <label class="form-check-label" for="filter">                	
+                Applied for: HMRC Time To Pay scheme	               	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForGov">            
+            <label class="form-check-label" for="filter">                	
+                Applied for: Government s. business grant/loan schemes               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForAFA">            
+            <label class="form-check-label" for="filter">
+                Applied for: Accredited finance agreements
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="appliedForNone">
+            <label class="form-check-label" for="filter">
+                Applied for: None	
+            </label>
+          </div>
+        </div>
+        </div>
+        <span>
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseReceived" aria-expanded="false" aria-controls="collapseExample">
+            Received Initiatives
+        </button>
+        </span>
+        <div class="collapse" id="collapseReceived">
+        <div class="card card-body">             
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="receivedCJRS">           
+            <label class="form-check-label" for="filter">
+                Received: Covid Job Retention Scheme               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="receivedBRH">           
+            <label class="form-check-label" for="filter">                	
+                Received: Business rates holiday	                	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="receivedVAT">
+            <label class="form-check-label" for="filter">                
+                Received: Deferring VAT payments                
+            </label>
+          </div><div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="receivedHMRC">
+            <label class="form-check-label" for="filter">                	
+                Received: HMRC Time To Pay scheme	               	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="receivedGov">            
+            <label class="form-check-label" for="filter">                	
+                Received: Government s. business grant/loan schemes               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="receivedAFA">            
+            <label class="form-check-label" for="filter">
+                Received: Accredited finance agreements
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="receivedNone">
+            <label class="form-check-label" for="filter">
+                Received: None	
+            </label>
+          </div>
+        </div>
+        </div>
+        <span>
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseWillApply" aria-expanded="false" aria-controls="collapseExample">
+            Future Initiatives
+        </button>
+        </span>
+        <div class="collapse" id="collapseWillApply">
+        <div class="card card-body">          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="willApplyForCJRS">           
+            <label class="form-check-label" for="filter">
+                Will Apply for: Covide Job Retention Scheme               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="willApplyForBRH">           
+            <label class="form-check-label" for="filter">                	
+                Will Apply for: Business rates holiday	                	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="willApplyForVAT">
+            <label class="form-check-label" for="filter">                
+                Will Apply for: Deferring VAT payments                
+            </label>
+          </div><div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="willApplyForHMRC">
+            <label class="form-check-label" for="filter">                	
+                Will Apply for: HMRC Time To Pay scheme	               	
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="willApplyForGov">            
+            <label class="form-check-label" for="filter">                	
+                Will Apply for: Government s. business grant/loan schemes               
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="willApplyForAFA">            
+            <label class="form-check-label" for="filter">
+                Will Apply for: Accredited finance agreements
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filter" id="willApplyForNone">
+            <label class="form-check-label" for="filter">
+                Will Apply for: None	
+            </label>
+          </div>
+        </div>
+        </div>         
+        <span>                           
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCompare" aria-expanded="false" aria-controls="collapseExample">
+                Compare
+            </button>
+            </span>
+            <div class="collapse" id="collapseCompare">
+            <div class="card card-body"> 
+                
+                <iframe style="height:500px; width: 100%;" src="../HP/Data.html"></iframe>
+            
+            </div>              
+            </div>       
+     </div>
+     </div>
+
+         
+         
+         
+
+        <script>
+            d3.select("#surveyLess250").on("change", displaySurveysLess250);
+            d3.select("#surveyMore250").on("change", displaySurveysMore250);
+            d3.select("#surveyTotal").on("change", displaySurveysTotal);
+            d3.select("#numOfResWFLess250").on("change", displayNumOfResWFLess250);
+            d3.select("#numOfResWFMore250").on("change", displayNumOfResWFMore250);
+            d3.select("#numOfResTotal").on("change", displayNumOfResTotal);
+            d3.select("#propOfResLess250").on("change", displayPropOfResWFLess250);
+            d3.select("#propOfResMore250").on("change", displayPropOfResWFMore250);
+            d3.select("#propOfResTotal").on("change", displayPropOfResWFTotal);
+            d3.select("#contToTrade").on("change", displayContToTrade);
+            d3.select("#ceasedToTrade").on("change", displayCeasedToTrade);
+            d3.select("#pausedToTrade").on("change", displayPausedToTrade);
+            d3.select("#appliedForCJRS").on("change", displayAppliedForCJRS);
+            d3.select("#appliedForBRH").on("change", displayAppliedForBRH);
+            d3.select("#appliedForVAT").on("change", displayAppliedForVAT);
+            d3.select("#appliedForHMRC").on("change", displayAppliedForHMRC);
+            d3.select("#appliedForGov").on("change", displayAppliedForGov);
+            d3.select("#appliedForAFA").on("change", displayAppliedForAFA);
+            d3.select("#appliedForNone").on("change", displayAppliedForNone);
+            d3.select("#receivedCJRS").on("change", displayReceivedCJRS);
+            d3.select("#receivedBRH").on("change", displayReceivedBRH);
+            d3.select("#receivedVAT").on("change", displayReceivedVAT);
+            d3.select("#receivedHMRC").on("change", displayReceivedHMRC);
+            d3.select("#receivedGov").on("change", displayReceivedGov);
+            d3.select("#receivedAFA").on("change", displayReceivedAFA);
+            d3.select("#receivedNone").on("change", displayReceivedNone);
+            d3.select("#willApplyForCJRS").on("change", displayWillApplyForCJRS);
+            d3.select("#willApplyForBRH").on("change", displayWillApplyForBRH);
+            d3.select("#willApplyForVAT").on("change", displayWillApplyForVAT);
+            d3.select("#willApplyForHMRC").on("change", displayWillApplyForHMRC);
+            d3.select("#willApplyForGov").on("change", displayWillApplyForGov);
+            d3.select("#willApplyForAFA").on("change", displayWillApplyForAFA);
+            d3.select("#willApplyForNone").on("change", displayWillApplyForNone);
+            d3.select("#clear").on("click", clear);            
+
+                
+            function clear() {
+                d3.selectAll("svg").remove();
+            }       
+            
+
+            function displaySurveysLess250() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],
+                        surveyLess250: data["Surveys Sent Out (Workforce Size<250)"]                                              
+                    }
+                })                
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 11 * d3.max(industries, function(d){return d.surveyLess250;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Surveys sent out (Workforce < 250)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.surveyLess250); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' + d.surveyLess250];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }  
+           
+            function displaySurveysMore250() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],
+                        surveyMore250:  data["Surveys Sent Out (Workforce Size 250+)"]                                              
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 110 * d3.max(industries, function(d){return d.surveyMore250;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Surveys sent out (Workforce 250+)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.surveyMore250); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' + d.surveyMore250];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }  
+            
+            function displaySurveysTotal() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],
+                        surveyTotal: data["Surveys Sent Out (Total)"],	
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 25 * d3.max(industries, function(d){return d.surveyTotal;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Surveys sent out (Total)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.surveyTotal); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' + d.surveyTotal];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }               
+            
+            function displayNumOfResWFLess250() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],
+                        numOfResWFLess250: data["Number of Responses (Workforce Size<250)"]                        	                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 50 * d3.max(industries, function(d){return d.numOfResWFLess250;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Number of Responses (Workforce < 250)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.numOfResWFLess250); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' + d.numOfResWFLess250];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)               
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }            
+            
+            function displayNumOfResWFMore250() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],
+                        numOfResWFMore250: data["Number of Reponses (Workforce Size 250+)"]                        	                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 25 * d3.max(industries, function(d){return d.numOfResWFMore250;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Number of Responses (Workforce 250+)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.numOfResWFMore250); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' + d.numOfResWFMore250];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayNumOfResTotal() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                       
+                        numOfResTotal: data["Number of Responses (Total)"] 
+                    }                       
+                })                
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 9 * d3.max(industries, function(d){return d.numOfResTotal;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Number of Response (Total)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.numOfResTotal); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' + d.numOfResTotal];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayPropOfResWFLess250() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                       
+                        propOfResWFLess250: data["Proportion of Responses (Workforce Size <250)"]                       
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 1.71 * d3.max(industries, function(d){return d.propOfResWFLess250;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Proportion of Resposes (Workforce < 250)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.propOfResWFLess250); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' + Math.round(d.propOfResWFLess250 * 1000) / 10  + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayPropOfResWFMore250() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                       
+                        propOfResWFMore250:  data["Proportion of Responses (Workforce Size 250+)"]                        
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, 1.71 * d3.max(industries, function(d){return d.propOfResWFMore250;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Proportion of Reponses (Workforce 250+)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.propOfResWFMore250); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {
+                        return [d.industry + ': ' +  Math.round(d.propOfResWFMore250 * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayPropOfResWFTotal() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        propOfResTotal: data["Proportion of Responses (Total)"]                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.propOfResTotal;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Proportion of Responses (Total)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.propOfResTotal); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.propOfResTotal * 1000) / 10 + ' %'];                     
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayContToTrade() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        contToTrade: data["Trading status: Continuing to trade"]                       
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.contToTrade;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Trading status: Continuing to trade (%)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.contToTrade); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                        
+                        return [d.industry + ': ' + Math.round(d.contToTrade * 1000) / 10  + ' %'];
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)             
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayCeasedToTrade() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        	
+                        ceasedToTrade: data["Trading status: Has permanently ceased trading"]	
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.ceasedToTrade;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Trading status: Ceased trading (%)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.ceasedToTrade); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;                                                  
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                        
+                        return [d.industry + ': ' + Math.round(d.ceasedToTrade * 1000) / 10  + ' %']; 
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayPausedToTrade() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                       
+                        pausedToTrade: data["Trading status: Has temporarily closed or temporarily paused trading"]                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.pausedToTrade;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Trading status: Paused trading (%)")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.pausedToTrade); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                        
+                        return [d.industry + ': ' + Math.round(d.pausedToTrade * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+
+
+
+                }
+            }     
+            
+            
+            function displayAppliedForCJRS() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        appliedForCJRS: data["Applied for: Coronavirus Job Retention Scheme"]                        
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.appliedForCJRS;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: CJRS")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForCJRS); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.appliedForCJRS * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForBRH() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        appliedForBRH: data["Applied for: Business rates holiday"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.appliedForBRH;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Business rates holiday")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForBRH); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.appliedForBRH * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForVAT() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],  
+                        appliedForVAT: data["Applied for: Deferring VAT payments"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.appliedForVAT;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Deferring VAT payments")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForVAT); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.industry + ': ' + Math.round(d.appliedForVAT * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForHMRC() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        appliedForHMRC: data["Applied for: HMRC Time To Pay scheme"]                                                                   
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.appliedForHMRC;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: HMRC Time To Pay scheme")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForHMRC); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.industry + ': ' + Math.round(d.appliedForHMRC * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForGov() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        	
+                        appliedForGov: data["Applied for: Government-funded small grant or loan schemes"]	
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.appliedForGov;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Gov-funded s.b. grant/loan schemes")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForGov); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.appliedForGov * 1000) / 10 + ' %'];  
+                       });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForAFA() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        	
+                        appliedForAFA: data["Applied for: Accredited finance agreements"]
+                    }                        
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.appliedForAFA;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: Accredited finance agreements")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForAFA); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.appliedForAFA * 1000) / 10 + ' %'];  
+                     });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayAppliedForNone() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        appliedForNone: data["Applied for: We have not applied for any of these initiatives"]                       
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.appliedForNone;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Applied for: None")
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.appliedForNone); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                           
+                        return [d.industry + ': ' + Math.round(d.appliedForNone * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            function displayReceivedCJRS() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        receivedCJRS: data["Received: Coronavirus Job Retention Scheme"]                        
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.receivedCJRS;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Received: CJRS")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.receivedCJRS); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.receivedCJRS * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayReceivedBRH() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        receivedBRH: data["Received: Buiness rates holiday"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.receivedBRH;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Received: Business rates holiday")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.receivedBRH); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.receivedBRH * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayReceivedVAT() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],  
+                        receivedVAT: data["Received: Deferring VAT payments"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.receivedVAT;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Received: Deferring VAT payments")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.receivedVAT); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.industry + ': ' + Math.round(d.receivedVAT * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayReceivedHMRC() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        receivedHMRC: data["Received: HMRC Time To Pay scheme"]                                                                   
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.receivedHMRC;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Received: HMRC Time To Pay scheme")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.receivedHMRC); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.industry + ': ' + Math.round(d.receivedHMRC * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayReceivedGov() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        	
+                        receivedGov: data["Received: Government-funded small business grant or loan schemes"]	
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.receivedGov;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Received: Gov-funded s.b. grant/loan schemes")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.receivedGov); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.receivedGov * 1000) / 10 + ' %'];  
+                       });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayReceivedAFA() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        	
+                        receivedAFA: data["Received: Accredited finance agreements"]
+                    }                        
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.receivedAFA;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Received: Accredited finance agreements")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.receivedAFA); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.receivedAFA * 1000) / 10 + ' %'];  
+                     });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayReceivedNone() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        receivedNone: data["Received: We haven't received any that we applied for"]                       
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.receivedNone;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Received: None")
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.receivedNone); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                           
+                        return [d.industry + ': ' + Math.round(d.receivedNone * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            function displayWillApplyForCJRS() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        willApplyForCJRS: data["Will apply for: Coronavirus Job Retention Scheme"]                        
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.willApplyForCJRS;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Will apply for: CJRS")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.willApplyForCJRS); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.willApplyForCJRS * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)
+                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayWillApplyForBRH() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        willApplyForBRH: data["Will apply for: Business rates holiday"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.willApplyForBRH;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Will apply for: Business rates holiday")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.willApplyForBRH); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.willApplyForBRH * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayWillApplyForVAT() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],  
+                        willApplyForVAT: data["Will apply for: Deferring VAT payments"]                                                                    
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.willApplyForVAT;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Will apply for: Deferring VAT payments")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.willApplyForVAT); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.industry + ': ' + Math.round(d.willApplyForVAT * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayWillApplyForHMRC() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        willApplyForHMRC: data["Will apply for HMRC Time To Pay scheme"]                                                                   
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.willApplyForHMRC;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Will apply for: HMRC Time To Pay scheme")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.willApplyForHMRC); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                            
+                        return [d.industry + ': ' + Math.round(d.willApplyForHMRC * 1000) / 10 + ' %'];  
+                        });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayWillApplyForGov() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        	
+                        willApplyForGov: data["Will apply for: Government-funded small business grant or loan schemes"]	
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();                   
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.willApplyForGov;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Will apply for: Gov-funded s.b. grant/loan schemes")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.willApplyForGov); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.willApplyForGov * 1000) / 10 + ' %'];  
+                       });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayWillApplyForAFA() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        	
+                        willApplyForAFA: data["Will apply for: Accredited fiance agreements"]
+                    }                        
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.willApplyForAFA;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Will apply for: Accredited finance agreements")
+
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.willApplyForAFA); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                          
+                        return [d.industry + ': ' + Math.round(d.willApplyForAFA * 1000) / 10 + ' %'];  
+                     });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }     
+            
+            
+            function displayWillApplyForNone() {
+              d3.queue()
+                .defer(d3.tsv, "../HP/downloads/CW1-BusinessImpactsOfCovid19Data-xlsx.tsv",
+                function(data, id) {
+                    return {
+                        id: id,
+                        industry: data["Industry"],                        
+                        willApplyForNone: data["Will apply for: None of the above"]                       
+                    }
+                })
+                .defer(d3.tsv, "")
+                .await(analyze);
+
+                function analyze(error, industries) {
+                    d3.selectAll("svg").remove();
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    
+                    industries = industries.slice(0,16);
+                    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
+                    var width = 1100;                       
+                    var xScale = d3.scaleLinear()
+                        .domain([0, d3.max(industries, function(d){return d.willApplyForNone;})])
+                        .range([0, width]);
+                    
+                    var height = industries.length*30;
+                    var yScale = d3.scaleBand()
+                        .domain(industries.map(function(d) { return d.id;}))
+                        .range([0, height])
+                        .padding(0.1);
+
+                    console.log(xScale.domain);
+
+                    var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width', "100%")
+                        .attr('height', height + margin.top + margin.bottom) 
+                        .append('g')
+                        .attr('transform', 'translate(' + 350 + ',' + margin.top + ")");
+                        
+                        svg.append("text")
+                            .attr("transform", "translate(100,0)")
+                            .attr("x", 479)
+                            .attr("y", 0)
+                            .attr("font-size", "24px")
+                            .text("Will apply for: None")
+                        
+                        var bars = svg.selectAll(".bar")
+                        .data(industries)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "bar")
+                        .on("mouseover", onMouseOver)
+                        .on("mouseout", onMouseOut)
+                        .attr("height", yScale.bandwidth())
+                        .attr("width", function(d) { return xScale(d.willApplyForNone); })
+                        .attr("x", 0)
+                        .attr("y", function(d) { return yScale(d.id); })
+                        .transition()
+                        .ease(d3.easeLinear)
+                        .duration(450);
+                        
+                        svg.append("g")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(d3.axisBottom().scale(xScale));
+                            
+                        
+                        svg.append("g")
+                            .call(d3.axisLeft(yScale)
+                            .tickSize(0)
+                            .tickFormat(function(d, i) {
+                                return industries[i].industry;
+                            })
+                            );
+      
+                
+                function onMouseOver(d, i) {
+                    d3.select(this).attr('class', 'highlight');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450);
+
+                    svg.append("text")
+                    .attr('class', 'val')         
+                    .text(function() {                           
+                        return [d.industry + ': ' + Math.round(d.willApplyForNone * 1000) / 10 + ' %'];  
+                    });
+                }
+
+                function onMouseOut(d, i) {
+                    d3.select(this).attr('class', 'bar');
+                    d3.select(this)
+                    .transition()     
+                    .duration(450)                
+
+                    d3.selectAll('.val')
+                    .remove()
+                }
+                }
+            }  
+            
+            
+            
+            
+            
+            
+            
+             
+        </script>
+        
+    </body>
+</html>
