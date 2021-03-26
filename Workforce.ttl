@@ -1,15 +1,15 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix scovo: <http://purl.org/NET/scovo#> .
-@prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix : <http://workforce.semanticweb.org/data/> .
-@prefix workforce: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix scovo: <http://purl.org/NET/scovo#>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix : <http://workforce.semanticweb.org/data/>.
+@prefix workforce: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#>.
 
 :TPMay2020 rdf:type workforce:TimePeriod;
-	 dc:title "May 2020" ;	 
+	 dc:title "May 2020".	 
 
 :WFLessThan250 rdf:type workforce:Workforce;
 	 dc:title "< 250".
@@ -21,79 +21,79 @@
 	 dc:title "All Size Bands".
 
 :TradingStatusCont rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Trading status: Continuing to trade" ;
+	 dc:title "Trading status: Continuing to trade".
 
 :TradingStatusCeased rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Trading status: Has permanently ceased trading" ;
+	 dc:title "Trading status: Has permanently ceased trading".
 
 :TradingStatusPaused rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Trading status: Has temporarily closed or temporarily paused trading" ;
+	 dc:title "Trading status: Has temporarily closed or temporarily paused trading".
 
 :AppliedForCJRS rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Applied for: Coronavirus Job Retention Scheme" ;
+	 dc:title "Applied for: Coronavirus Job Retention Scheme".
 
 :AppliedForBRH rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Applied for: Business rates holiday" ;
+	 dc:title "Applied for: Business rates holiday".
 
 :AppliedForVAT rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Applied for: Deferring VAT payments" ;
+	 dc:title "Applied for: Deferring VAT payments".
 
 :AppliedForHMRC rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Applied for: HMRC Time To Pay scheme" ;
+	 dc:title "Applied for: HMRC Time To Pay scheme".
 
 :AppliedForGovFund rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Applied for: Government-funded small business grant or loan schemes" ;
+	 dc:title "Applied for: Government-funded small business grant or loan schemes".
 
 :AppliedForAFA rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Applied for: Accredited finance agreements" ;
+	 dc:title "Applied for: Accredited finance agreements".
 
 :AppliedForNone rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Applied for: We have not applied for any of these initiatives" ;
+	 dc:title "Applied for: We have not applied for any of these initiatives".
 
 
 
 :ReceivedCJRS  rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Received: Coronavirus Job Retention Scheme" ;
+	 dc:title "Received: Coronavirus Job Retention Scheme".
 
 :ReceivedBRH rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Received: Business rates holiday" ;
+	 dc:title "Received: Business rates holiday".
 
 :ReceivedVAT rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Received: Deferring VAT payments" ;
+	 dc:title "Received: Deferring VAT payments".
 
 :ReceivedHMRC rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Received: HMRC Time To Pay scheme" ;
+	 dc:title "Received: HMRC Time To Pay scheme".
 
 :ReceivedGovFund rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Received: Government-funded small business grant or loan schemes" ;
+	 dc:title "Received: Government-funded small business grant or loan schemes".
 
 :ReceivedAFA rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Received: Accredited finance agreements" ;
+	 dc:title "Received: Accredited finance agreements".
 
 :ReceivedNone rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Received: We haven’t received any that we applied for" ;
+	 dc:title "Received: We haven’t received any that we applied for".
 
 :WillApplyForCJRS rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Will apply For: Coronavirus Job Retention Scheme" ;
+	 dc:title "Will apply For: Coronavirus Job Retention Scheme".
 
 :WillApplyForBRH rdf:type workforce:WorkforceDetailedInformation;
-	dc:title "Will apply for: Business rates holiday" ;
+	dc:title "Will apply for: Business rates holiday".
 
 :WillApplyForVAT rdf:type workforce:WorkforceDetailedInformation;
-	 dc:title "Will apply for: Deferring VAT payments" ; 	
+	 dc:title "Will apply for: Deferring VAT payments". 	
 
 
 :WillApplyForHMRC rdf:type workforce:WorkforceDetailedInformation; 
-	 dc:title "Will apply for: HMRC Time To Pay scheme" ;
+	 dc:title "Will apply for: HMRC Time To Pay scheme".
 
 :WillApplyForGovFund rdf:type workforce:WorkforceDetailedInformation; 
-	 dc:title "Will apply for: Government-funded small business grant or loan schemes" ;
+	 dc:title "Will apply for: Government-funded small business grant or loan schemes".
 
 :WillApplyForAFA rdf:type workforce:WorkforceDetailedInformation; 	
- dc:title "Will apply for:: Accredited finance agreements" ;
+ dc:title "Will apply for:: Accredited finance agreements".
 
 :WillApplyForNone rdf:type workforce:WorkforceDetailedInformation;
- 	 dc:title "Will apply for:  None of the above" ;
+ 	 dc:title "Will apply for:  None of the above".
 
 
 
@@ -187,7 +187,7 @@
 	 qb:dataSet :ds2_3_21;
 	 qb:dataSet :ds2_3_22;
 	 qb:dataSet :ds2_3_23;
-	 qb:dataSet :ds2_3_24;
+	 qb:dataSet :ds2_3_24
 		
 	 
 
