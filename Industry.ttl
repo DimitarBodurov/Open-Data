@@ -1,12 +1,12 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix scovo: <http://purl.org/NET/scovo#> .
-@prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix : <http://industry.semanticweb.org/data/> .
-@prefix industry: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix scovo: <http://purl.org/NET/scovo#>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix : <http://industry.semanticweb.org/data/>.
+@prefix industry: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#>.
 
 
 
