@@ -6,7 +6,7 @@
 @prefix scovo: <http://purl.org/NET/scovo#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix : <http://country.semanticweb.org/data/> .
-@prefix country: <http://semanticweb.org/schema/country> .
+@prefix country: <http://www.github.com/DimitarBodurov/Open-Data/survey.owl#> .
 
 
 
